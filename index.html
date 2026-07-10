@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Careers After Economics — Career Deep Dive | College Access Program</title>
-<meta name="description" content="The honest map of careers after Economics for Class 10, 11 and 12 students — CBSE, ICSE, IB and Cambridge. Pathways, 25+ career routes, a shuffled self-sorter, and a 30-day challenge with a personalised plan.">
+<title>Economics: The Science of Choice — Career Deep Dive | College Access Program</title>
+<meta name="description" content="Economics: the science of choice. The honest map of careers after Economics for Class 10, 11 and 12 students — CBSE, ICSE, IB and Cambridge. Pathways, 30+ career routes including emerging green-economy roles, the skills it builds, a shuffled self-sorter, and a 30-day challenge with a personalised plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -222,6 +222,29 @@ body:not(.camb) .camb-only{display:none}
 .heat i{width:8px;height:8px;border-radius:50%;background:#E4E5DD}
 .heat i.on{background:var(--red)}
 
+/* ── skills map (how economics trains your brain) ── */
+.skills-map{margin-top:40px;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 14px 34px rgba(32,43,58,0.06)}
+.skills-head,.skills-row{display:grid;grid-template-columns:1fr 46px 1fr;align-items:center}
+.skills-head{background:var(--yellow-soft);border-bottom:2px solid var(--yellow)}
+.skills-head span{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);padding:16px 24px}
+.skills-head span:last-child{color:var(--green)}
+.skills-row{border-bottom:1px dashed var(--line);transition:background .15s}
+.skills-row:last-child{border-bottom:none}
+.skills-row:hover{background:#FAFAF6}
+.skills-row .sk-from{font-family:var(--body);font-weight:500;font-size:15.5px;color:var(--ink-soft);padding:16px 24px}
+.skills-row .sk-to{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-0.01em;padding:16px 24px}
+.skills-row .sk-arrow{display:grid;place-items:center;color:var(--green);font-weight:700;font-size:16px}
+.skills-note{margin-top:24px;display:flex;gap:14px;align-items:flex-start;font-size:14.6px;color:var(--ink-soft);max-width:56em}
+.skills-note p{margin-top:2px}
+.skills-note .sk-badge{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);border:1.5px solid var(--green);background:var(--green-soft);border-radius:100px;padding:7px 13px;white-space:nowrap;flex-shrink:0}
+@media(max-width:620px){
+  .skills-head,.skills-row{grid-template-columns:1fr 30px 1fr}
+  .skills-head span,.skills-row .sk-from,.skills-row .sk-to{padding:13px 15px}
+  .skills-head span{font-size:11px;letter-spacing:0.1em}
+  .skills-row .sk-from{font-size:14px}.skills-row .sk-to{font-size:15px}
+  .skills-note{flex-direction:column;gap:10px}
+}
+
 /* ── reality: field notes ── */
 .truths{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 @media(max-width:960px){.truths{grid-template-columns:1fr 1fr}}
@@ -347,6 +370,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
     <nav class="topnav">
       <a href="#sorter">Find your side</a>
       <a href="#pathways">Pathways</a>
+      <a href="#skills">What it builds</a>
       <a href="#careers">Careers</a>
       <a href="#reality">Reality check</a>
       <a href="#challenge">30-day challenge</a>
@@ -360,7 +384,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
   <div class="eyebrow">Career Deep Dive &nbsp;·&nbsp; Economics</div>
   <div class="hero-grid">
     <div>
-      <h1>Everything has a price. Including the <b>subjects</b> you pick.</h1>
+      <h1>Economics: the <b>science of choice</b>.</h1>
       <p class="hero-copy">Economics isn't a chapter on demand curves. It's the study of <span class="hl">how people choose</span> — and it leads to more careers than almost any other subject you can take in Class 11. Here's the honest map.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="#sorter">Find your side of economics <span>→</span></a>
@@ -622,17 +646,60 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
   </div>
 </section>
 
+<!-- divider -->
+<div class="divider">
+  <span class="dcap">Transferable value ▲ compounding</span>
+  <svg viewBox="0 0 1130 64" preserveAspectRatio="none" aria-hidden="true">
+    <path class="dpath" d="M0 50 L110 46 L200 50 L290 38 L380 42 L470 30 L560 34 L650 22 L740 28 L830 16 L920 20 L1010 10 L1130 8" fill="none" stroke="#3E7C52" stroke-width="2.5"/>
+  </svg>
+</div>
+<!-- ── SKILLS: HOW ECONOMICS TRAINS YOUR BRAIN ── -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-eyebrow">The payoff · What it builds in you</div>
+        <h2>How economics trains your brain.</h2>
+        <p class="sec-sub">Whichever side you land on, economics quietly builds a set of thinking habits that outlast any single job. Each one maps onto a skill the World Economic Forum flags as future-ready — the kind that gets more valuable, not less, as the world automates.</p>
+      </div>
+      <div class="sec-fig minifig">
+        <span class="cap">Fig. 4 — Brain, trained</span>
+        <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
+          <path d="M44 22c-12 0-20 8-20 18 0 4 1 7 3 10-4 3-6 7-6 12 0 10 8 16 18 16h5V22z" fill="none" stroke="#202B3A" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M76 22c12 0 20 8 20 18 0 4-1 7-3 10 4 3 6 7 6 12 0 10-8 16-18 16h-5V22z" fill="none" stroke="#3E7C52" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M60 24v54" stroke="#DCDED4" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle class="spin-slow" cx="60" cy="50" r="8" fill="none" stroke="#F0C94F" stroke-width="2.5" stroke-dasharray="4 4"/>
+          <circle cx="60" cy="50" r="3" fill="#C9573F"/>
+        </svg>
+      </div>
+    </div>
+    <div class="skills-map rv">
+      <div class="skills-head"><span>Economics trains…</span><span aria-hidden="true"></span><span>Future-ready skill</span></div>
+      <div class="skills-row"><div class="sk-from">Structural analysis</div><div class="sk-arrow">→</div><div class="sk-to">Systems thinking</div></div>
+      <div class="skills-row"><div class="sk-from">Trade-off analysis</div><div class="sk-arrow">→</div><div class="sk-to">Analytical thinking</div></div>
+      <div class="skills-row"><div class="sk-from">Strategic thinking</div><div class="sk-arrow">→</div><div class="sk-to">Creative problem-solving</div></div>
+      <div class="skills-row"><div class="sk-from">Resource allocation</div><div class="sk-arrow">→</div><div class="sk-to">Talent &amp; project management</div></div>
+      <div class="skills-row"><div class="sk-from">Forecasting</div><div class="sk-arrow">→</div><div class="sk-to">AI &amp; big data fluency</div></div>
+      <div class="skills-row"><div class="sk-from">Behavioural reasoning</div><div class="sk-arrow">→</div><div class="sk-to">Empathy &amp; active listening</div></div>
+    </div>
+    <div class="skills-note rv">
+      <span class="sk-badge">WEF · Future of Jobs</span>
+      <p>The World Economic Forum names systems thinking, AI &amp; big data, and behavioural reasoning among the decade's most valuable skills. Economics builds them the honest way — by analysing trade-offs, reading interconnected systems, interpreting data, forecasting outcomes and judging real decisions in real-world contexts.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── CAREERS ── -->
 <section id="careers">
   <div class="wrap">
     <div class="sec-head rv">
       <div>
         <div class="sec-eyebrow">Step 03 · The routes</div>
-        <h2>25+ careers, honestly described.</h2>
-        <p class="sec-sub">Each card carries what the work actually is, the typical route in, and a competition meter — because how hard a door is to open is information you deserve upfront.</p>
+        <h2>30+ careers, honestly described.</h2>
+        <p class="sec-sub">Each card carries what the work actually is, the typical route in, and a competition meter — because how hard a door is to open is information you deserve upfront. The list now leans into the emerging, green-economy roles too, not just the familiar ones.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 4 — Routes by heat</span>
+        <span class="cap">Fig. 5 — Routes by heat</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <g class="bar-anim">
             <rect x="16" y="58" width="16" height="32" rx="3" fill="#3E7C52"/>
@@ -672,7 +739,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
         <p class="sec-sub">Six index cards. You deserve the hard truths at 15, not at 21 — and each card ends with the honest way through.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 5 — Expectation vs reality</span>
+        <span class="cap">Fig. 6 — Expectation vs reality</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <path d="M12 80 C 40 70, 70 30, 108 14" fill="none" stroke="#DCDED4" stroke-width="3" stroke-dasharray="5 5"/>
           <path d="M12 80 C 44 78, 60 66, 74 58 C 84 52, 90 40, 108 34" fill="none" stroke="#C9573F" stroke-width="3"/>
@@ -698,11 +765,11 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
     <div class="sec-head rv">
       <div>
         <div class="sec-eyebrow">Step 05 · The 30-day challenge</div>
-        <h2>Thirty days. One honest answer.</h2>
+        <h2>30-Day Challenge &amp; Reflection.</h2>
         <p class="sec-sub">Six moves below, each with real picks — books, channels, courses, fieldwork. Tap <b>+</b> to add anything to your board; <b>three moves is the sweet spot</b> (one from the shelf, one from the screen, one from the street). At the end, download your personalised plan and put it above your desk. If the month flies by, you have your answer.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 6 — Thirty days</span>
+        <span class="cap">Fig. 7 — Thirty days</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <g class="bar-anim">
             <rect x="10" y="10" width="100" height="14" rx="3" fill="#E3EDE4"/>
@@ -808,18 +875,23 @@ const CAREERS=[
  {s:"markets",t:"Fintech Product Manager",d:"Decide what a payments or lending app builds next. Economics thinking + tech fluency.",r:"Econ + data/CS exposure → APM programmes",heat:4},
  {s:"markets",t:"Risk Analyst",d:"Banks pay people to imagine everything that can go wrong, quantitatively. Steadier cousin of trading.",r:"Econ/Stats degree → FRM certification later",heat:3},
  {s:"markets",t:"Entrepreneur",d:"Pricing, incentives, unit economics — the founder's daily toolkit is an economics syllabus.",r:"Any fork + an actual problem you care about",heat:3},
+ {s:"markets",t:"ESG / Sustainable Finance Analyst",d:"Score companies on climate, social and governance risk — now a core input into how the world's biggest funds allocate money.",r:"Econ/finance degree → CFA ESG or sustainability cert",heat:3},
+ {s:"markets",t:"Impact Investing Analyst",d:"Fund ventures that must return both profit and measurable good — climate, health, financial inclusion. The double bottom line.",r:"Econ + finance → impact funds, DFIs, foundations",heat:3},
  {s:"data",t:"Data Analyst → Data Scientist",d:"Turn raw data into decisions. The single most in-demand skill pairing with an economics degree.",r:"Econ + Python/SQL (self-taught counts)",heat:3},
  {s:"data",t:"Quantitative Analyst",d:"Build trading and pricing models at funds and banks. The most mathematical door economics opens.",r:"Econ+Maths/Stats → strong master's usually",heat:5},
  {s:"data",t:"Econometrician",d:"The statistician of economics — measure what policies and prices actually cause.",r:"BSc Econ → MA/MSc with econometrics focus",heat:3},
  {s:"data",t:"Market Research Analyst",d:"Find out what consumers actually want before companies bet crores on it.",r:"Econ/Stats/Psych degree → research firms",heat:2},
  {s:"data",t:"Business Intelligence Analyst",d:"Build the dashboards every company runs on. Underrated, everywhere, and hiring.",r:"Any econ fork + SQL/BI tools",heat:2},
  {s:"data",t:"Sports Analytics / Economist",d:"Auction strategy, pricing, performance value — leagues and franchises now staff for it.",r:"Econ + data skills → niche, network in",heat:3},
+ {s:"data",t:"Carbon Markets Analyst",d:"Price, model and audit carbon credits as emissions trading scales worldwide — a market that barely existed a decade ago and is now hiring hard.",r:"Econ + data → climate desks, exchanges, verifiers",heat:3},
  {s:"policy",t:"Economist (RBI / institutions)",d:"The actual title. Research and advise on the real economy at the RBI, World Bank, IMF, ADB.",r:"BSc Econ → MA/MSc (DSE/ISI/abroad) → research",heat:5},
  {s:"policy",t:"Indian Economic Service (IES)",d:"The specialist civil service for economists — shape national policy from inside government.",r:"Econ master's → UPSC IES exam",heat:5},
  {s:"policy",t:"Policy Analyst (think tanks)",d:"Research at NCAER, CPR and advisory firms. Where evidence meets government.",r:"Econ degree → master's often → think tanks",heat:3},
  {s:"policy",t:"Development Economist",d:"Field experiments and programme design on poverty, health and education — J-PAL-style work, much of it in India.",r:"Econ degree → RA roles → master's/PhD",heat:3},
  {s:"policy",t:"RBI Grade B Officer",d:"The regulator's officer cadre — among India's most competitive and most secure economics jobs.",r:"Any degree → RBI Grade B exam",heat:5},
  {s:"policy",t:"Climate / Environmental Economist",d:"Carbon markets, green finance, climate risk. The decade's growth specialisation.",r:"Econ degree → environmental econ master's",heat:3},
+ {s:"policy",t:"Energy / Renewables Economist",d:"Model the economics of the energy transition — grids, storage, subsidies, and the hard question of who pays for going green.",r:"Econ degree → energy econ master's / think tanks",heat:3},
+ {s:"policy",t:"Sustainability Consultant",d:"Help companies and governments hit net-zero and disclosure targets without going broke doing it. Advisory work that didn't exist as a job a generation ago.",r:"Econ degree → sustainability / consulting track",heat:3},
  {s:"policy",t:"Urban Economist / Planner",d:"Why cities price housing, transport and land the way they do — and how to fix it.",r:"Econ degree → urban policy/planning master's",heat:2},
  {s:"policy",t:"Competition / Economics Lawyer",d:"Economics + law: antitrust, regulation, arbitration. One of Indian law's most respected corners.",r:"Econ in Class 12 → CLAT → NLU → firms",heat:4},
  {s:"people",t:"Behavioural Scientist",d:"Design products and policies around how people actually behave, not how they should.",r:"Econ/Psych degree → behavioural science master's",heat:3},
