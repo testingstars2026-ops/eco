@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#243638">
 <title>Economics: The Science of Choice — Career Deep Dive | College Access Program</title>
-<meta name="description" content="Economics: the science of choice. The honest map of careers after Economics for Class 10, 11 and 12 students — CBSE, ICSE, IB and Cambridge. Pathways, 30+ career routes including emerging green-economy roles, the skills it builds, a shuffled self-sorter, and a 30-day challenge with a personalised plan.">
+<meta name="description" content="Economics: the science of choice. The honest map of careers after Economics for Class 10, 11 and 12 students — CBSE, ICSE, IB and Cambridge. Pathways, 30+ career routes including emerging green-economy roles, the skills it builds, a shuffled self-sorter, and CAP-recommended books, videos, courses and fieldwork with a personalised 30-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 /* If you hold a Manifold CF licence, add its @font-face rules here.
    The stack below picks it up automatically; until then Space Grotesk carries the look. */
@@ -40,19 +39,35 @@ a{color:inherit}
 .mono{font-family:var(--mono)}
 .scribble{font-family:var(--hand);font-size:20px;color:var(--grey);transform:rotate(-2deg);display:inline-block}
 
-/* ── top bar ── */
-.topbar{position:sticky;top:0;z-index:60;background:rgba(241,242,236,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.topbar-in{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* ── top bar (static, not sticky — designed to sit below the site's own sticky nav) ── */
+.topbar{position:relative;z-index:60;background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:14px 24px 12px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand img{height:32px;width:auto;display:block}
 .brand .bsep{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;color:var(--grey);text-transform:uppercase;border-left:1.5px solid var(--line);padding-left:12px;line-height:1.3}
-.topnav{display:flex;gap:24px;font-size:14.5px;font-weight:500}
-.topnav a{text-decoration:none;color:var(--ink-soft)}
-.topnav a:hover{color:var(--ink)}
 .top-cta{font-size:14px;font-weight:700;text-decoration:none;background:var(--ink);color:#fff;padding:10px 20px;border-radius:100px;white-space:nowrap;transition:transform .15s}
 .top-cta:hover{transform:translateY(-1px)}
-@media(max-width:900px){.topnav{display:none}}
 @media(max-width:520px){.brand .bsep{display:none}.brand img{height:27px}.top-cta{padding:9px 15px;font-size:13px}}
+/* the step strip — sticky map of the page, scrolls sideways on small screens.
+   If your site theme has its own sticky header, set its height here so the strip docks below it: */
+:root{--site-header:0px}
+.stepstrip{position:sticky;top:var(--site-header);z-index:70;background:var(--ink);border-bottom:3px solid var(--yellow);box-shadow:0 8px 24px rgba(32,43,58,0.18)}
+.stepstrip-in{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.stepstrip-in::-webkit-scrollbar{display:none}
+.step-pill{flex-shrink:0;display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.22);border-radius:100px;padding:8px 16px 8px 9px;transition:all .15s}
+.step-pill:hover{background:rgba(255,255,255,0.16);border-color:var(--yellow)}
+.step-pill .sp-n{width:22px;height:22px;border-radius:50%;background:var(--yellow);color:var(--ink);font-family:var(--mono);font-weight:700;font-size:11px;display:grid;place-items:center;flex-shrink:0}
+.step-pill .sp-t{font-family:var(--body);font-weight:700;font-size:13.5px;color:#EDEDE4;white-space:nowrap}
+.step-pill.active{background:var(--yellow);border-color:var(--yellow)}
+.step-pill.active .sp-t{color:var(--ink)}
+.step-pill.active .sp-n{background:var(--ink);color:var(--yellow)}
+/* anchor offset: site header (if any) + the sticky strip itself */
+section,#top{scroll-margin-top:calc(var(--site-header) + 76px)}
+/* mobile-only note */
+.mobile-note{display:none;background:var(--yellow-soft);border-bottom:1.5px solid var(--yellow);padding:11px 16px;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.mobile-note b{color:var(--ink)}
+.mobile-note button{flex-shrink:0;background:none;border:1.5px solid var(--ink);border-radius:50%;width:26px;height:26px;font-size:12px;color:var(--ink);cursor:pointer;display:grid;place-items:center;margin-top:1px}
+@media(max-width:760px){.mobile-note{display:flex}}
 
 /* ── hero ── */
 .eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:0.2em;color:var(--green);text-transform:uppercase}
@@ -69,6 +84,7 @@ a{color:inherit}
 .btn-dark:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(32,43,58,0.22)}
 .btn-ghost{background:transparent;color:var(--ink)}
 .btn-ghost:hover{background:rgba(32,43,58,0.05)}
+.hero-note{margin-top:16px;font-family:var(--mono);font-size:12.5px;color:var(--grey);line-height:1.6}
 
 /* fig card */
 .fig-card{background:var(--card);border-radius:22px;box-shadow:0 24px 60px rgba(32,43,58,0.09);padding:28px 28px 22px}
@@ -175,7 +191,7 @@ body:not(.camb) .camb-only{display:none}
 .pathway{margin-top:44px;position:relative}
 .pathway::before{content:'';position:absolute;left:26px;top:10px;bottom:10px;width:3px;background:repeating-linear-gradient(to bottom,var(--ink) 0 8px,transparent 8px 16px);opacity:.25}
 .stage{position:relative;padding-left:76px;margin-bottom:54px}
-.stage-marker{position:absolute;left:0;top:0;width:55px;height:55px;border-radius:16px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:12.5px;text-align:center;line-height:1.1}
+.stage-marker{position:absolute;left:0;top:0;width:55px;height:55px;border-radius:16px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:10.5px;text-align:center;line-height:1.15;letter-spacing:0.02em}
 .stage h3{font-family:var(--disp);font-weight:700;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.02em}
 .stage-when{font-family:var(--mono);font-size:12px;color:var(--grey);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
 .stage-intro{color:var(--ink-soft);margin-top:12px;max-width:44em}
@@ -328,6 +344,65 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
 .foot img{height:30px;width:auto;display:block;margin-bottom:10px}
 .foot .mono{font-size:12px}
 
+/* ── fit: who loves this subject ── */
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+@media(max-width:960px){.traits{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.traits{grid-template-columns:1fr}}
+.trait{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .15s,border-color .15s}
+.trait:hover{transform:translateY(-3px);border-color:var(--green)}
+.trait .tick{width:30px;height:30px;border-radius:9px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;font-weight:700;font-size:15px}
+.trait b{font-family:var(--disp);font-weight:700;font-size:17.5px;letter-spacing:-0.01em;line-height:1.2}
+.trait p{font-size:14.4px;color:var(--ink-soft)}
+.fit-note{margin-top:24px;font-size:15px;color:var(--ink-soft)}
+/* big mac widget */
+.bigmac{margin-top:34px;background:var(--card);border:2px solid var(--ink);border-radius:var(--radius);padding:26px;box-shadow:6px 6px 0 var(--yellow)}
+.bigmac .bm-eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--red)}
+.bigmac h3{font-family:var(--disp);font-weight:700;font-size:clamp(19px,2.2vw,25px);letter-spacing:-0.02em;margin-top:6px}
+.bigmac .bm-sub{font-size:15px;color:var(--ink-soft);margin-top:8px;max-width:44em}
+.bm-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+@media(max-width:760px){.bm-row{grid-template-columns:1fr 1fr}}
+.bm-card{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-family:var(--body)}
+.bm-card:hover{border-color:var(--ink)}
+.bm-card.open{background:var(--yellow-soft);border-color:var(--yellow);cursor:default}
+.bm-card .bm-country{font-weight:700;font-size:14.5px}
+.bm-card .bm-price{font-family:var(--mono);font-weight:700;font-size:19px;margin-top:6px;color:var(--grey)}
+.bm-card.open .bm-price{color:var(--ink)}
+.bm-cap{font-family:var(--mono);font-size:12px;color:var(--grey);margin-top:14px;min-height:2.4em;line-height:1.55}
+/* degree chips */
+.deg-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.deg-chips span{font-family:var(--mono);font-size:12.5px;background:var(--card);border:1.5px solid var(--line);border-radius:100px;padding:7px 14px;color:var(--ink-soft)}
+.deg-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);margin-top:26px}
+/* 30-day calendar */
+.cal{margin-top:36px;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;overflow-x:auto}
+.cal .cal-title{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.cal .cal-title b{color:var(--green)}
+.cal-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;min-width:560px}
+.cal-day{background:var(--paper);border:1.5px solid var(--line);border-radius:9px;padding:7px 4px 6px;text-align:center}
+.cal-day .cd-n{font-family:var(--mono);font-weight:700;font-size:13px}
+.cal-day .cd-d{font-family:var(--mono);font-size:9.5px;color:var(--grey);margin-top:1px}
+.cal-day.today{background:var(--ink);border-color:var(--ink)}
+.cal-day.today .cd-n{color:var(--yellow)}.cal-day.today .cd-d{color:#EDEDE4}
+.cal-day.w1{border-bottom:3px solid var(--green)}
+.cal-day.w2{border-bottom:3px solid var(--yellow)}
+.cal-day.w3{border-bottom:3px solid var(--red)}
+.cal-day.w4{border-bottom:3px solid var(--ink)}
+.cal-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--grey)}
+.cal-legend span{display:flex;align-items:center;gap:7px}
+.cal-legend i{width:14px;height:3px;border-radius:2px;display:inline-block}
+/* book covers + price tags */
+.bookcover{flex-shrink:0;width:34px;height:48px;border-radius:3px 6px 6px 3px;position:relative;display:flex;align-items:flex-end;padding:4px;box-shadow:2px 2px 6px rgba(32,43,58,0.22);overflow:hidden}
+.bookcover::before{content:'';position:absolute;left:3px;top:0;bottom:0;width:1.5px;background:rgba(255,255,255,0.35)}
+.bookcover span{font-family:var(--disp);font-weight:700;font-size:7px;line-height:1.15;color:#fff;letter-spacing:0.01em}
+.price-tag{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--green);background:var(--green-soft);border-radius:100px;padding:3px 9px;white-space:nowrap;display:inline-block;margin-top:4px}
+/* quiz result illustration */
+.result-grid{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:start}
+.result-illo{width:150px;flex-shrink:0}
+.result-illo svg{display:block;width:100%;height:auto}
+@media(max-width:640px){.result-grid{grid-template-columns:1fr}.result-illo{width:110px}}
+/* careers footnote */
+.careers-note{margin-top:28px;background:var(--yellow-soft);border:1.5px dashed var(--yellow);border-radius:14px;padding:16px 20px;font-size:14.6px;color:var(--ink-soft)}
+.careers-note b{color:var(--ink)}
+
 .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
 :focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
@@ -361,369 +436,6 @@ footer{border-top:1px solid var(--line);padding:40px 0 56px;margin-top:40px}
   .eq-dot,.eq-tip,.eq-line{opacity:1}
   .bar-anim rect{transform:scaleY(1)}
 }
-
-/* ═══════════════════════════════════════════════════════════════
-   CAP STUDENT EXPERIENCE REDESIGN · 2026
-   Editorial, interactive, mobile-first visual layer for Classes 10–12
-   Palette aligned to CAP website: warm sand, sea-glass teal, sun-faded coral
-   ═══════════════════════════════════════════════════════════════ */
-:root{
-  --paper:#F3EFE4;
-  --grid:rgba(36,54,56,.035);
-  --ink:#252A2D;
-  --ink-soft:#4F5657;
-  --grey:#7C817E;
-  --green:#6FA8A2;
-  --green-soft:#E1EEEA;
-  --red:#D97959;
-  --red-soft:#F4E1D9;
-  --yellow:#E7C477;
-  --yellow-soft:#F5EBD2;
-  --card:#FFFFFF;
-  --line:#DED6C4;
-  --radius:24px;
-  --navy:#243638;
-  --purple:#2C7977;
-  --purple-2:#4B9994;
-  --cyan:#88BBB5;
-  --lime:#F1A17D;
-  --blue-soft:#E5EFEC;
-  --disp:'Manrope',sans-serif;
-  --body:'Manrope',sans-serif;
-  --serif:'Cormorant Garamond',serif;
-}
-body{
-  background:
-    radial-gradient(circle at 8% 4%,rgba(44,121,119,.10),transparent 26rem),
-    radial-gradient(circle at 92% 22%,rgba(136,187,181,.12),transparent 30rem),
-    var(--paper);
-  background-size:auto;
-  font-size:17px;
-}
-.wrap{max-width:1240px;padding-left:32px;padding-right:32px}
-
-/* NAV */
-.topbar{
-  background:rgba(7,20,47,.90);
-  border-bottom:1px solid rgba(255,255,255,.10);
-  backdrop-filter:blur(18px) saturate(140%);
-}
-.topbar-in{max-width:1240px;padding:13px 32px}
-.brand img{filter:brightness(0) invert(1);height:35px}
-.brand .bsep{color:rgba(255,255,255,.58);border-color:rgba(255,255,255,.18)}
-.topnav{gap:22px}
-.topnav a{color:rgba(255,255,255,.72);font-size:13.5px}
-.topnav a:hover{color:#fff}
-.top-cta{
-  background:var(--lime);color:var(--navy);padding:11px 19px;
-  box-shadow:0 0 0 1px rgba(255,255,255,.10),0 8px 24px rgba(241,161,125,.16)
-}
-.top-cta:hover{box-shadow:0 12px 30px rgba(241,161,125,.25)}
-
-/* HERO */
-.hero{
-  max-width:none;margin:0;padding:76px 0 76px;
-  color:#fff;position:relative;isolation:isolate;overflow:hidden;
-  background:
-    radial-gradient(circle at 88% 20%,rgba(136,187,181,.24),transparent 25rem),
-    radial-gradient(circle at 15% 100%,rgba(217,121,89,.24),transparent 34rem),
-    linear-gradient(135deg,#243638 0%,#2B4445 52%,#3A6662 100%);
-}
-.hero::before{
-  content:'';position:absolute;inset:0;z-index:-1;opacity:.28;
-  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
-  background-size:54px 54px;
-  mask-image:linear-gradient(to bottom,black,transparent 88%);
-}
-.hero::after{
-  content:'';position:absolute;width:380px;height:380px;border:1px solid rgba(255,255,255,.12);
-  border-radius:50%;right:-100px;top:-130px;box-shadow:0 0 0 48px rgba(255,255,255,.025),0 0 0 96px rgba(255,255,255,.018);z-index:-1
-}
-.hero>.eyebrow,.hero>.hero-grid{width:min(1240px,100%);margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px}
-.hero>.eyebrow{color:var(--lime);font-size:12px;letter-spacing:.18em}
-.hero>.eyebrow::before{background:var(--lime);width:32px}
-.hero-grid{grid-template-columns:1.02fr .98fr;gap:72px;margin-top:31px}
-.hero h1{font-size:clamp(48px,5.8vw,82px);line-height:.98;letter-spacing:-.055em;max-width:760px}
-.hero h1 b{
-  color:var(--lime);font-family:var(--serif);font-style:italic;font-weight:600;
-  letter-spacing:-.035em;text-shadow:0 0 32px rgba(241,161,125,.16)
-}
-.hero-copy{font-size:clamp(18px,1.55vw,21px);color:rgba(255,255,255,.75);max-width:35em;line-height:1.65}
-.hl{background:linear-gradient(transparent 58%,rgba(136,187,181,.28) 58%);border-color:var(--cyan);color:#fff}
-.hero .btn-dark{background:var(--lime);color:var(--navy);border-color:var(--lime)}
-.hero .btn-dark:hover{box-shadow:0 12px 30px rgba(241,161,125,.25)}
-.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
-.hero .btn-ghost:hover{background:rgba(255,255,255,.12)}
-.hero-proof{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
-.hero-proof span{
-  display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.065);
-  color:rgba(255,255,255,.74);font-family:var(--mono);font-size:10.5px;letter-spacing:.04em
-}
-.hero-proof span::before{content:'✓';color:var(--cyan);font-weight:700}
-.fig-card{
-  position:relative;border-radius:30px;padding:28px 28px 23px;
-  border:1px solid rgba(255,255,255,.7);
-  box-shadow:0 30px 80px rgba(0,0,0,.28),0 0 0 8px rgba(255,255,255,.035);
-  transform:rotate(1.2deg);
-}
-.fig-card::before{
-  content:'MARKET LAB';position:absolute;right:-18px;top:-18px;z-index:2;
-  padding:9px 14px;border-radius:12px;background:var(--cyan);color:var(--navy);
-  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;transform:rotate(3deg);
-  box-shadow:0 8px 22px rgba(0,0,0,.16)
-}
-.fig-head{color:#6D7890}
-.shock{background:#F6F7FB;border-color:#D8DDEA}
-.shock.on{background:var(--navy);color:var(--lime)}
-
-/* TICKER + JOURNEY */
-.ticker{background:var(--lime);color:var(--navy);border:0;padding:14px 0}
-.ticker-track span{border-color:rgba(7,20,47,.18);font-weight:700}
-.ticker-track .up,.ticker-track .dn,.ticker-track .yy{color:var(--purple)}
-.journey-nav{
-  background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 28px rgba(16,27,68,.05)
-}
-.journey-nav-in{max-width:1240px;margin:auto;padding:18px 32px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.journey-link{
-  text-decoration:none;display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:16px;
-  color:var(--ink-soft);transition:.18s ease;border:1px solid transparent
-}
-.journey-link:hover{background:var(--blue-soft);color:var(--ink);transform:translateY(-2px);border-color:#C8DDD8}
-.journey-link b{
-  width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:var(--navy);color:var(--lime);
-  font-family:var(--mono);font-size:11px;flex:0 0 auto
-}
-.journey-link span{font-size:13px;font-weight:700;line-height:1.2}
-
-/* SECTION SYSTEM */
-section{padding:92px 0;position:relative}
-.sec-head{gap:42px}
-.sec-eyebrow{
-  display:inline-flex;width:auto;padding:8px 13px;border-radius:999px;background:var(--blue-soft);color:var(--purple);
-  letter-spacing:.15em;font-size:11px
-}
-.sec-eyebrow::before{display:none}
-h2{font-size:clamp(34px,4vw,54px);letter-spacing:-.045em;line-height:1.02;margin-top:18px}
-.sec-sub{font-size:18px;line-height:1.7;max-width:46em}
-.minifig{border:0;border-radius:22px;padding:15px 16px 10px;box-shadow:0 14px 36px rgba(11,22,51,.08);transform:rotate(2deg)}
-.divider{max-width:1240px}
-.divider .dcap{background:var(--paper);padding:2px 8px;border-radius:6px}
-
-/* QUIZ AS HERO EXPERIENCE */
-#sorter{
-  color:#fff;overflow:hidden;
-  background:
-    radial-gradient(circle at 12% 20%,rgba(217,121,89,.22),transparent 30rem),
-    radial-gradient(circle at 90% 80%,rgba(136,187,181,.18),transparent 32rem),
-    var(--navy)
-}
-#sorter::before{content:'?';position:absolute;right:3%;top:1%;font-family:var(--disp);font-weight:700;font-size:420px;line-height:1;color:rgba(255,255,255,.025)}
-#sorter .sec-eyebrow{background:rgba(241,161,125,.13);color:var(--lime);border:1px solid rgba(241,161,125,.20)}
-#sorter .sec-sub{color:rgba(255,255,255,.68)}
-#sorter .minifig{background:#fff}
-#sorter .quiz-shell{
-  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.065));
-  border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);border-radius:32px;
-  box-shadow:0 28px 80px rgba(0,0,0,.25);padding:50px;margin-top:46px
-}
-.quiz-deck{color:rgba(255,255,255,.48)}
-.quiz-progress i{background:rgba(255,255,255,.14);height:6px}
-.quiz-progress i.on{background:var(--lime)}
-.quiz-qnum{color:var(--cyan)}
-.quiz-q{font-size:clamp(25px,3vw,38px);max-width:25em}
-.quiz-opt{
-  color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);border-radius:18px;
-  padding:20px 21px;font-size:16px
-}
-.quiz-opt:hover{background:var(--lime);color:var(--navy);border-color:var(--lime);transform:translateY(-3px)}
-.result-tag{background:rgba(241,161,125,.16);color:var(--lime)}
-.result-body{color:rgba(255,255,255,.7)}
-.result-careers span{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#fff}
-#sorter .quiz-result .btn-dark{background:var(--lime);color:var(--navy);border-color:var(--lime)}
-#sorter .quiz-result .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
-.quiz-restart{color:rgba(255,255,255,.58)}
-
-/* PATHWAY */
-#pathways{background:linear-gradient(180deg,#F5F0E6 0%,#F7F4EC 100%)}
-#pathways .sec-eyebrow{background:#E1EEEA;color:#2C7977}
-.board-bar{background:#fff;padding:14px 16px;border:1px solid #DED6C4;border-radius:20px;width:max-content;box-shadow:0 10px 28px rgba(59,43,130,.07)}
-.board-toggle{border-color:var(--navy);background:#F8F4EA}
-.board-toggle button.on{background:var(--purple);color:#fff}
-.pathway{margin-top:48px}
-.pathway::before{left:31px;width:4px;background:linear-gradient(var(--purple),var(--cyan),var(--green));opacity:1;border-radius:4px}
-.stage{
-  background:rgba(255,255,255,.9);border:1px solid #E3DCCB;border-radius:32px;
-  padding:38px 38px 38px 108px;margin-bottom:32px;box-shadow:0 20px 60px rgba(65,53,120,.07)
-}
-.stage-marker{
-  left:15px;top:34px;width:64px;height:64px;border-radius:20px;background:linear-gradient(145deg,var(--purple),#285F5E);
-  color:#fff;box-shadow:0 12px 26px rgba(44,121,119,.23)
-}
-.stage:nth-child(2) .stage-marker{background:linear-gradient(145deg,#D9A554,#B98239)}
-.stage:nth-child(3) .stage-marker{background:linear-gradient(145deg,#E6906E,#C96E50)}
-.stage h3{font-size:clamp(26px,2.7vw,36px)}
-.stage-when{color:var(--purple);margin-top:7px}
-.stage-intro{font-size:16px;line-height:1.7}
-.fork{border-color:#E4DDCE;border-radius:19px;box-shadow:0 8px 24px rgba(11,22,51,.035)}
-.fork summary{padding:21px 22px}
-.fork summary:hover{background:#FAF7F0}
-.fork-arrow{border:0;background:var(--blue-soft);color:var(--purple)}
-.fork[open]{border-color:#9EC6C1;box-shadow:0 12px 34px rgba(44,121,119,.10)}
-.fork[open] .fork-arrow{background:var(--purple);color:#fff}
-.fork-body{background:#FCFAF5;padding:2px 22px 22px}
-.decision{background:linear-gradient(135deg,#F7E5B7,#FBF2DA);border:0;padding:25px 28px;box-shadow:0 10px 24px rgba(231,196,119,.16)}
-.decision .scribble{background:transparent;color:#876737}
-
-/* SKILLS */
-#skills{background:#fff}
-#skills .sec-eyebrow{background:var(--green-soft);color:#2C7977}
-.skills-map{border:0;border-radius:28px;box-shadow:0 24px 65px rgba(11,22,51,.08)}
-.skills-head{background:var(--navy);border:0}
-.skills-head span{color:#fff;padding:20px 26px}
-.skills-head span:last-child{color:var(--lime)}
-.skills-row{min-height:68px;border-color:#E7E9F1}
-.skills-row:nth-child(even){background:#FAFBFE}
-.skills-row:hover{background:var(--blue-soft)}
-.skills-row .sk-from,.skills-row .sk-to{padding:19px 26px}
-.skills-row .sk-arrow{color:var(--purple);font-size:20px}
-.skills-note .sk-badge{color:#2C7977;border-color:#6FA8A2;background:var(--green-soft)}
-
-/* CAREERS */
-#careers{background:linear-gradient(180deg,#EDF5F2 0%,#FAF7F0 100%)}
-#careers .sec-eyebrow{background:#DDECE8;color:#2C7977}
-.filters{position:sticky;top:70px;z-index:20;background:rgba(239,255,251,.88);backdrop-filter:blur(12px);padding:12px;border:1px solid rgba(111,168,162,.16);border-radius:20px;width:max-content;max-width:100%}
-.chip{border:0;background:#fff;padding:10px 17px;box-shadow:0 3px 10px rgba(11,22,51,.04)}
-.chip.on{background:var(--navy);color:var(--lime)}
-.cards{gap:18px}
-.card{
-  border:0;border-radius:24px;padding:24px;min-height:310px;position:relative;overflow:hidden;
-  box-shadow:0 12px 32px rgba(11,22,51,.07)
-}
-.card::before{content:'';position:absolute;right:-24px;top:-24px;width:95px;height:95px;border-radius:30px;transform:rotate(18deg);background:var(--blue-soft)}
-.card:has(.side-markets)::before{background:#E1EEEA}
-.card:has(.side-people)::before{background:#F4E1D9}
-.card:has(.side-policy)::before{background:#E3EFEC}
-.card:has(.side-data)::before{background:#F4E3B8}
-.card:hover{transform:translateY(-7px);box-shadow:0 22px 48px rgba(11,22,51,.12)}
-.card .side-tag{position:relative;z-index:1}
-.card h4{font-size:21px;line-height:1.15;margin-top:4px;max-width:86%}
-.card p{font-size:14.8px;line-height:1.62}
-.card .meta{font-size:11.7px;background:#F7F8FC;margin:0 -8px -8px;padding:14px;border:0;border-radius:16px}
-.side-markets{background:#E1EEEA;color:#2C7977}.side-people{background:#FFE5E8;color:#B85D46}.side-policy{background:#E4EFEC;color:#2F6D6A}.side-data{background:#FFF0B9;color:#7E622D}
-.heat i{width:9px;height:9px}.heat i.on{background:var(--purple)}
-
-/* REALITY */
-#reality{
-  color:#fff;overflow:hidden;
-  background:radial-gradient(circle at 80% 10%,rgba(217,121,89,.18),transparent 30rem),var(--navy)
-}
-#reality::before{content:'NO\A SUGAR\A COATING';white-space:pre;position:absolute;right:1%;bottom:-30px;font-family:var(--disp);font-size:110px;font-weight:700;line-height:.76;color:rgba(255,255,255,.025);text-align:right}
-#reality .sec-eyebrow{background:rgba(217,121,89,.14);color:#EEA081;border:1px solid rgba(217,121,89,.22)}
-#reality .sec-sub{color:rgba(255,255,255,.65)}
-#reality .minifig{background:#fff}
-.truths{gap:18px}
-.truth{
-  border:0;border-radius:20px;padding:28px 24px 50px;box-shadow:0 18px 42px rgba(0,0,0,.22);color:var(--ink)
-}
-.truth:nth-child(1),.truth:nth-child(4){background:#F4E3B8}
-.truth:nth-child(2),.truth:nth-child(5){background:#E1EEEA}
-.truth:nth-child(3),.truth:nth-child(6){background:#F4E1D9}
-.truth::before{background:rgba(255,255,255,.55);width:95px}
-.truth .no{color:var(--purple)}
-.truth b{font-size:20px}
-.truth p{line-height:1.62}
-.stamp{color:var(--purple);border-color:var(--purple)}
-
-/* CHALLENGE */
-#challenge{background:linear-gradient(180deg,#FFF8DC 0%,#FFFDF6 100%)}
-#challenge .sec-eyebrow{background:#F0D391;color:#765A2E}
-.moves{gap:18px}
-.move{
-  border:0;border-radius:26px;padding:26px;box-shadow:0 15px 38px rgba(117,92,38,.07);overflow:hidden
-}
-.move:nth-child(1),.move:nth-child(4){background:#fff}
-.move:nth-child(2),.move:nth-child(5){background:#E8F1EE}
-.move:nth-child(3),.move:nth-child(6){background:#E6F2EF}
-.move::before{content:'';position:absolute;right:-34px;top:-34px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.36)}
-.move.has-picked{box-shadow:0 0 0 3px var(--green),0 18px 40px rgba(111,168,162,.16)}
-.move h4{font-size:24px}
-.move .cost{display:inline-block;background:rgba(255,255,255,.72);padding:5px 9px;border-radius:999px;color:#2C7977}
-.picks{border-color:rgba(11,22,51,.10)}
-.pick{border-color:rgba(11,22,51,.08);padding:13px 0}
-.pick-ic{background:#fff;box-shadow:0 3px 10px rgba(11,22,51,.06)}
-.pick-add{border:0;background:#fff;box-shadow:0 4px 14px rgba(11,22,51,.10)}
-.pick-add:hover{background:var(--navy);color:#fff}
-.pick-add.added,.move-btn.added{background:var(--green);color:#fff}
-.move-btn{background:#fff;border:0;box-shadow:0 4px 14px rgba(11,22,51,.08)}
-.move-btn:hover{background:var(--navy)}
-.plan-bar{background:var(--navy);border:1px solid rgba(255,255,255,.15);box-shadow:0 18px 50px rgba(36,54,56,.35)}
-.plan-bar button{background:var(--lime)}
-.sheet{background:#F7F8FD}
-
-/* CTA + FOOTER */
-#sessions-cta{background:#fff}
-#sessions-cta .shell{
-  color:#fff;border:0;border-radius:34px;padding:64px;
-  background:
-    radial-gradient(circle at 88% 20%,rgba(25,211,197,.24),transparent 21rem),
-    linear-gradient(135deg,#B96549 0%,#2F6664 48%,#253A3C 100%);
-  box-shadow:12px 12px 0 var(--lime),0 26px 70px rgba(44,121,119,.22)
-}
-#sessions-cta .sec-sub{color:rgba(255,255,255,.75)}
-#sessions-cta .live-pill{color:var(--lime)}
-#sessions-cta .live-pill::before{content:'↗';width:auto;height:auto;border-radius:0;background:none;animation:none;font-size:14px}
-#sessions-cta .btn-dark{background:var(--lime);color:var(--navy);border-color:var(--lime)}
-#sessions-cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
-footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
-.foot{color:rgba(255,255,255,.56)}
-.foot img{filter:brightness(0) invert(1)}
-
-/* MICRO-INTERACTIONS */
-.btn{position:relative;overflow:hidden}
-.btn::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.25) 48%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease}
-.btn:hover::after{transform:translateX(120%)}
-.card,.move,.fork,.truth{will-change:transform}
-
-/* RESPONSIVE */
-@media(max-width:1000px){
-  .journey-nav-in{grid-template-columns:repeat(5,minmax(130px,1fr));overflow-x:auto;scrollbar-width:none}
-  .journey-nav-in::-webkit-scrollbar{display:none}
-  .filters{width:100%;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
-  .chip{white-space:nowrap}
-}
-@media(max-width:940px){
-  .hero{padding:58px 0 62px}.hero-grid{gap:48px}.fig-card{transform:none;max-width:680px}
-  .hero h1{max-width:850px}
-}
-@media(max-width:820px){
-  .stage{padding:104px 24px 26px}.stage-marker{left:24px;top:24px}.pathway::before{display:none}
-  #sessions-cta .shell{padding:40px 28px;box-shadow:7px 7px 0 var(--lime)}
-}
-@media(max-width:760px){
-  section{padding:68px 0}.wrap{padding-left:20px;padding-right:20px}
-  .hero>.eyebrow,.hero>.hero-grid{padding-left:20px;padding-right:20px}
-  .topbar-in{padding-left:20px;padding-right:20px}
-  .journey-nav-in{padding-left:20px;padding-right:20px}
-  #sorter .quiz-shell{padding:32px 22px}
-  .board-bar{width:100%}
-}
-@media(max-width:520px){
-  .top-cta{font-size:0;padding:10px 12px}.top-cta::before{content:'Other subjects';font-size:12px}
-  .hero{padding-top:44px}.hero h1{font-size:clamp(40px,12vw,57px)}
-  .hero-copy{font-size:17px}.hero-proof{gap:7px}.hero-proof span{font-size:9.5px;padding:7px 9px}
-  .fig-card::before{right:10px;top:-16px}
-  .journey-nav-in{grid-template-columns:repeat(5,145px);padding-top:13px;padding-bottom:13px}
-  .journey-link{padding:9px}.journey-link b{width:28px;height:28px}
-  h2{font-size:clamp(31px,9vw,42px)}.sec-sub{font-size:16.5px}
-  #sorter .quiz-shell{border-radius:24px;margin-top:34px}.quiz-q{font-size:25px}.quiz-opt{padding:17px}
-  .stage{border-radius:25px;padding-left:20px;padding-right:20px}.stage-marker{left:20px}
-  .board-bar{padding:12px}.board-label{width:100%}.board-toggle{width:100%}
-  .card{min-height:auto}.filters{top:61px;border-radius:16px;padding:8px}
-  .truth{border-radius:18px}.move{padding:22px 18px}
-  #sessions-cta .shell{border-radius:26px;padding:34px 22px}
-}
-
 </style>
 </head>
 <body class="cbse">
@@ -731,35 +443,37 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
 <div class="topbar">
   <div class="topbar-in">
     <a class="brand" href="#top"><img id="logoTop" alt="College Access Program"><span class="bsep">Career<br>Deep Dive</span></a>
-    <nav class="topnav">
-      <a href="#sorter">Find your side</a>
-      <a href="#pathways">Pathways</a>
-      <a href="#skills">What it builds</a>
-      <a href="#careers">Careers</a>
-      <a href="#reality">Reality check</a>
-      <a href="#challenge">30-day challenge</a>
-    </nav>
-    <a class="top-cta" href="https://www.collegeaccessprogram.in/sessions/">Explore other subjects</a>
+    <a class="top-cta" href="/sessions">Join the live session</a>
   </div>
+</div>
+<nav class="stepstrip" aria-label="Page guide">
+    <div class="stepstrip-in" id="stepStrip">
+      <a class="step-pill" href="#fit" data-sec="fit"><span class="sp-n">1</span><span class="sp-t">Is this you?</span></a>
+      <a class="step-pill" href="#sorter" data-sec="sorter"><span class="sp-n">2</span><span class="sp-t">Find your side</span></a>
+      <a class="step-pill" href="#pathways" data-sec="pathways"><span class="sp-n">3</span><span class="sp-t">Map your pathway</span></a>
+      <a class="step-pill" href="#skills" data-sec="skills"><span class="sp-n">4</span><span class="sp-t">Skills you gain</span></a>
+      <a class="step-pill" href="#careers" data-sec="careers"><span class="sp-n">5</span><span class="sp-t">Explore careers</span></a>
+      <a class="step-pill" href="#reality" data-sec="reality"><span class="sp-n">6</span><span class="sp-t">Hard truths</span></a>
+      <a class="step-pill" href="#challenge" data-sec="challenge"><span class="sp-n">7</span><span class="sp-t">Your free 30-day plan</span></a>
+  </div>
+</nav>
+<div class="mobile-note" id="mobileNote">
+  <span>You're on the pocket version — everything works here, and the full maps breathe best on a desktop. Either way, your <b>complimentary personalised career plan (PDF)</b> is waiting at Step 7.</span>
+  <button id="mnClose" aria-label="Dismiss">✕</button>
 </div>
 
 <!-- ── HERO ── -->
 <header class="hero wrap" id="top">
-  <div class="eyebrow">Career Deep Dive &nbsp;·&nbsp; Economics &nbsp;·&nbsp; Built for Class 10–12</div>
+  <div class="eyebrow">Career Deep Dive &nbsp;·&nbsp; Economics</div>
   <div class="hero-grid">
     <div>
-      <h1>Economics is the <b>science of choice</b>.</h1>
-      <p class="hero-copy">Not just money. Not just demand curves. Economics is the study of <span class="hl">how people choose</span> — and it can take you into finance, data, policy, tech, climate, law and far beyond. Here is the honest map.</p>
+      <h1>Economics: the <b>science of choice</b>.</h1>
+      <p class="hero-copy">Economics isn't a chapter on demand curves. It's the study of <span class="hl">how people choose</span> — and it leads to more careers than almost any other subject you can take in Class 11. Here's the honest map.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="#sorter">Find your side of economics <span>→</span></a>
-        <a class="btn btn-ghost" href="https://www.collegeaccessprogram.in/sessions/">Explore other subjects</a>
+        <a class="btn btn-ghost" href="/sessions">Join the live session</a>
       </div>
-      <div class="hero-proof" aria-label="Page highlights">
-        <span>5-question self-sorter</span>
-        <span>30+ career routes</span>
-        <span>Board-specific pathways</span>
-        <span>Personalised 30-day plan</span>
-      </div>
+      <p class="hero-note">Takes about 10 minutes end to end · Your complimentary personalised career plan (PDF) is at Step 7 — free, no sign-up.</p>
     </div>
     <div class="fig-card">
       <div class="fig-head"><span>Fig. 1 — Your first economics graph</span><span>Playable</span></div>
@@ -816,27 +530,60 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="ticker"></div>
 </div>
-<nav class="journey-nav" aria-label="Explore this career deep dive">
-  <div class="journey-nav-in">
-    <a class="journey-link" href="#sorter"><b>01</b><span>Find your side</span></a>
-    <a class="journey-link" href="#pathways"><b>02</b><span>Map the pathway</span></a>
-    <a class="journey-link" href="#careers"><b>03</b><span>Explore careers</span></a>
-    <a class="journey-link" href="#reality"><b>04</b><span>Get the reality check</span></a>
-    <a class="journey-link" href="#challenge"><b>05</b><span>Try it for 30 days</span></a>
+
+<!-- ── FIT: WHO LOVES THIS SUBJECT ── -->
+<section id="fit">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-eyebrow">Step 01 · The mirror test</div>
+        <h2>The kind of student who loves economics.</h2>
+        <p class="sec-sub">Before any career list, check the fit. If three or more of these sound like you, keep reading — this subject was probably built for your brain.</p>
+      </div>
+      <div class="sec-fig minifig">
+        <span class="cap">Fig. 2 — Sounds like you?</span>
+        <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
+          <rect x="14" y="14" width="92" height="72" rx="10" fill="none" stroke="#202B3A" stroke-width="2.5"/>
+          <path d="M30 38l8 8 14-16" fill="none" stroke="#3E7C52" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 64l8 8 14-16" fill="none" stroke="#3E7C52" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M62 42h28M62 70h28" stroke="#DCDED4" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <div class="traits">
+      <div class="trait rv"><span class="tick">✓</span><b>You're curious about why things cost what they cost</b><p>You wonder why flight prices change hourly, or why onion prices suddenly spike.</p></div>
+      <div class="trait rv"><span class="tick">✓</span><b>You enjoy predicting behaviour</b><p>You like guessing how people, markets or governments will react to a change.</p></div>
+      <div class="trait rv"><span class="tick">✓</span><b>You like solving trade-off puzzles</b><p>You naturally think in terms of "what am I giving up to get this?"</p></div>
+      <div class="trait rv"><span class="tick">✓</span><b>You care about fairness and impact</b><p>Questions of inequality, poverty and policy genuinely interest you.</p></div>
+      <div class="trait rv"><span class="tick">✓</span><b>You enjoy data and patterns</b><p>You'd rather use numbers as evidence than rely on opinions.</p></div>
+      <div class="trait rv"><span class="tick">✓</span><b>You think in systems</b><p>You can see how one change — a tax, a rate cut — ripples through an entire economy.</p></div>
+    </div>
+    <div class="bigmac rv">
+      <span class="bm-eyebrow">Try one right now</span>
+      <h3>The burger that measures currencies.</h3>
+      <p class="bm-sub">A Big Mac costs <b>$5.79</b> in the United States. Same burger, same recipe, same brand everywhere. Tap each country and guess before you reveal.</p>
+      <div class="bm-row" id="bmRow">
+        <div class="bm-card open"><div class="bm-country">United States</div><div class="bm-price">$5.79</div></div>
+        <button class="bm-card" data-price="$7.99" data-c="ch"><div class="bm-country">Switzerland</div><div class="bm-price">Tap to reveal</div></button>
+        <button class="bm-card" data-price="$5.17" data-c="sg"><div class="bm-country">Singapore</div><div class="bm-price">Tap to reveal</div></button>
+        <button class="bm-card" data-price="$2.62" data-c="in"><div class="bm-country">India</div><div class="bm-price">Tap to reveal</div></button>
+      </div>
+      <div class="bm-cap" id="bmCap">The price nearly triples depending on which economy the burger is sitting in.</div>
+    </div>
   </div>
-</nav>
+</section>
 
 <!-- ── SORTER QUIZ ── -->
 <section id="sorter">
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">Step 01 · Two minutes</div>
+        <div class="sec-eyebrow">Step 02 · Two minutes</div>
         <h2>Which side of economics are you?</h2>
         <p class="sec-sub">Economics has four broad sides: markets and money, people and behaviour, policy and public good, data and forecasting. Five questions from a shuffled deck. No wrong answers — just an honest starting point.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 2 — Four sides</span>
+        <span class="cap">Fig. 3 — Four sides</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <rect x="10" y="10" width="46" height="36" rx="6" fill="#E3EDE4"/>
           <rect x="64" y="10" width="46" height="36" rx="6" fill="#F6E4DE"/>
@@ -868,12 +615,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">Step 02 · The map</div>
-        <h2>The pathway, fork by fork.</h2>
-        <p class="sec-sub">Most career pages show you destinations. What actually matters at your age are the <b>decision points</b> — where the road forks, what each fork keeps open, and what it quietly closes. Pick your curriculum and read the map that applies to you.</p>
+        <div class="sec-eyebrow">Step 03 · The map</div>
+        <h2>Your map: three big decisions.</h2>
+        <p class="sec-sub">Most career pages show you destinations. What actually matters at your age are the <b>decision points</b> — the three moments where you choose between roads, what each choice keeps open, and what it quietly closes. Pick your curriculum and read the map that applies to you.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 3 — Forks ahead</span>
+        <span class="cap">Fig. 4 — Decisions ahead</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <path d="M60 92 V58" stroke="#202B3A" stroke-width="3" stroke-linecap="round"/>
           <path d="M60 58 C 60 40, 30 42, 28 22" fill="none" stroke="#3E7C52" stroke-width="3" stroke-linecap="round"/>
@@ -899,7 +646,7 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
 
       <!-- STAGE 1 -->
       <div class="stage rv">
-        <div class="stage-marker">FORK<br>01</div>
+        <div class="stage-marker">CHOICE<br>01</div>
         <h3>The Class 11 choice</h3>
         <div class="stage-when">End of Class 10 · The one everyone panics about</div>
         <p class="stage-intro cbse-only">Under CBSE, economics travels with two streams: Commerce (with or without maths) and Humanities. The single most consequential sub-choice is not the stream. It is whether <b>mathematics comes with you</b>.</p>
@@ -919,8 +666,8 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
               <span class="fork-arrow">+</span>
             </summary>
             <div class="fork-body">
-              <p><span class="keeps">Keeps open:</span> BSc Economics at serious departments, econometrics, data science, actuarial science, quant finance, ISI and IIT-style entrances, and every economics master's programme worth its name. Real economics at university is a mathematical discipline — this fork is what makes you eligible for it.</p>
-              <p><span class="costs">Costs you:</span> The harder two years of the two options. If maths is a genuine daily struggle rather than mere dislike, forcing this fork can wreck your Class 12 score, which matters more for admission than the combination does.</p>
+              <p><span class="keeps">Keeps open:</span> BSc Economics at serious departments, econometrics, data science, actuarial science, quant finance, ISI and IIT-style entrances, and every economics master's programme worth its name. Real economics at university is a mathematical discipline — this choice is what makes you eligible for it.</p>
+              <p><span class="costs">Costs you:</span> The harder two years of the two options. If maths is a genuine daily struggle rather than mere dislike, forcing this combination can wreck your Class 12 score, which matters more for admission than the combination does.</p>
               <p class="cbse-only">CBSE note: Applied Mathematics (241) does <b>not</b> count as core maths for many BSc Economics programmes, ISI, or engineering-adjacent routes. If you want the full menu, take Mathematics (041).</p>
               <p class="icse-only">ISC note: ISC Mathematics is rigorous and universally accepted as core maths. ISC's strong English component quietly helps later — economics rewards people who can write.</p>
               <p class="ib-only">IB note: For economics, finance and data-leaning degrees, Maths AA signals more strongly than AI at most selective universities — LSE, for instance, states a preference for AA for its Economics BSc. AI SL closes some doors AA keeps open.</p>
@@ -949,14 +696,14 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
         <div class="decision">
           <span class="scribble">← the question that matters</span>
           <b>Decision point · Ask yourself</b>
-          <p>"Am I choosing away from maths, or towards something?" Choosing away is how students end up in Class 12 with strong marks and no direction. Choosing towards — law, writing, policy, business — makes the no-maths fork a strategy instead of an escape.</p>
+          <p>"Am I choosing away from maths, or towards something?" Choosing away is how students end up in Class 12 with strong marks and no direction. Choosing towards — law, writing, policy, business — makes the no-maths route a strategy instead of an escape.</p>
         </div>
       </div>
 
       <!-- STAGE 2 -->
       <div class="stage rv">
-        <div class="stage-marker">FORK<br>02</div>
-        <h3>The degree fork</h3>
+        <div class="stage-marker">CHOICE<br>02</div>
+        <h3>The degree decision</h3>
         <div class="stage-when">Class 12 · Where the applications actually go</div>
         <p class="stage-intro">Four families of degrees absorb most economics students. They are not interchangeable, and the names matter less than what each one trains you to do daily.</p>
         <div class="forks">
@@ -974,15 +721,15 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
           <details class="fork">
             <summary><span><span class="fork-name">B.Com / BBA / Management</span><span class="fork-tag">The commerce route</span></span><span class="fork-arrow">+</span></summary>
             <div class="fork-body">
-              <p>Accounting, finance, and business operations with economics as a supporting subject. Pairs naturally with CA, CS, CFA or an MBA later. IPMAT (IIM Indore/Rohtak five-year programmes) is the ambitious version of this fork straight from Class 12.</p>
-              <p><span class="keeps">Best for:</span> corporate finance, accounting, family business, entrepreneurship. <span class="costs">Watch out:</span> this fork trades depth in economics for breadth in business — moving back into pure economics later is harder than the reverse.</p>
+              <p>Accounting, finance, and business operations with economics as a supporting subject. Pairs naturally with CA, CS, CFA or an MBA later. IPMAT (IIM Indore/Rohtak five-year programmes) is the ambitious version of this route straight from Class 12.</p>
+              <p><span class="keeps">Best for:</span> corporate finance, accounting, family business, entrepreneurship. <span class="costs">Watch out:</span> this route trades depth in economics for breadth in business — moving back into pure economics later is harder than the reverse.</p>
             </div>
           </details>
           <details class="fork">
             <summary><span><span class="fork-name">Economics + Data / CS</span><span class="fork-tag">The 2030 route</span></span><span class="fork-arrow">+</span></summary>
             <div class="fork-body">
               <p>Joint or double-major programmes: economics with data science, statistics or computer science. Plaksha's Data Science, Economics &amp; Business BTech, Ashoka's econ + CS combinations, and abroad the classic Econ/CS double major. This is where the strongest early-career opportunities in the economics family currently sit.</p>
-              <p><span class="keeps">Best for:</span> data science, quant research, product, fintech. <span class="costs">Requires:</span> the maths fork behind you. This door does not open without it.</p>
+              <p><span class="keeps">Best for:</span> data science, quant research, product, fintech. <span class="costs">Requires:</span> maths kept in Class 11–12. This door does not open without it.</p>
             </div>
           </details>
           <details class="fork">
@@ -993,12 +740,16 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
             </div>
           </details>
         </div>
+        <div class="deg-cap">Degree names you'll actually see on application forms</div>
+        <div class="deg-chips">
+          <span>B.A. Economics (Hons.)</span><span>B.A. Business Economics</span><span>Integrated B.A.–M.A. Economics</span><span>B.A. PPE (Philosophy, Politics &amp; Economics)</span><span>B.A. Economics &amp; Public Policy</span><span>B.A. Mathematical Economics</span><span>B.A. Econometrics</span><span>B.A. Economics &amp; Data Science</span><span>B.A. Political Economy</span><span>B.A. Development Studies</span><span>B.A. International Economics</span><span>B.A. Liberal Arts (Economics major)</span><span>B.Sc. Statistics</span><span>B.Sc. Data Science</span><span>B.Sc. Actuarial Science</span><span>B.Com (Honours)</span><span>BBA — Finance</span><span>CA Foundation</span><span>CFA track</span>
+        </div>
       </div>
 
       <!-- STAGE 3 -->
       <div class="stage rv">
-        <div class="stage-marker">FORK<br>03</div>
-        <h3>The 22-year-old fork</h3>
+        <div class="stage-marker">CHOICE<br>03</div>
+        <h3>The decision at 22</h3>
         <div class="stage-when">After the degree · Where routes become careers</div>
         <p class="stage-intro">Nobody expects you to decide this now. But seeing it now changes how you spend your college years — because each of these rewards a different thing you can start building early.</p>
         <div class="forks">
@@ -1011,8 +762,8 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
             <div class="fork-body"><p>The credential route: DSE, ISI, JNU, or abroad. An economics master's is the entry ticket to being called an economist — at the RBI, in think tanks, in international organisations. Econometrics grades and maths rigour from your bachelor's decide who gets in.</p></div>
           </details>
           <details class="fork">
-            <summary><span><span class="fork-name">Professional exams</span><span class="fork-tag">MBA · UPSC · IES · RBI Grade B · CFA</span></span><span class="fork-arrow">+</span></summary>
-            <div class="fork-body"><p>India's exam layer sits on top of every degree. The Indian Economic Service (IES) is the specialist civil service for economists; RBI Grade B is among the most sought-after regulator jobs; CAT-to-MBA remains the classic reset button. All are brutal ratios — treat them as plans, not backups.</p></div>
+            <summary><span><span class="fork-name">Professional exams</span><span class="fork-tag">MBA · UPSC · RBI Grade B · CFA</span></span><span class="fork-arrow">+</span></summary>
+            <div class="fork-body"><p>India's exam layer sits on top of every degree. RBI Grade B (General) is open to any graduate and is among the most sought-after regulator jobs; the economist-specialist stream, <b>RBI Grade B (DEPR)</b>, requires a master's in economics or finance first — so it belongs one step later, after the master's route above. The Indian Economic Service (IES) also requires an economics master's. CAT-to-MBA remains the classic reset button. All are brutal ratios — treat them as plans, not backups.</p></div>
           </details>
           <details class="fork">
             <summary><span><span class="fork-name">Build something</span><span class="fork-tag">Entrepreneurship</span></span><span class="fork-arrow">+</span></summary>
@@ -1037,12 +788,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">The payoff · What it builds in you</div>
+        <div class="sec-eyebrow">Step 04 · The skills you gain</div>
         <h2>How economics trains your brain.</h2>
         <p class="sec-sub">Whichever side you land on, economics quietly builds a set of thinking habits that outlast any single job. Each one maps onto a skill the World Economic Forum flags as future-ready — the kind that gets more valuable, not less, as the world automates.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 4 — Brain, trained</span>
+        <span class="cap">Fig. 5 — Brain, trained</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <path d="M44 22c-12 0-20 8-20 18 0 4 1 7 3 10-4 3-6 7-6 12 0 10 8 16 18 16h5V22z" fill="none" stroke="#202B3A" stroke-width="2.5" stroke-linejoin="round"/>
           <path d="M76 22c12 0 20 8 20 18 0 4-1 7-3 10 4 3 6 7 6 12 0 10-8 16-18 16h-5V22z" fill="none" stroke="#3E7C52" stroke-width="2.5" stroke-linejoin="round"/>
@@ -1073,12 +824,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">Step 03 · The routes</div>
-        <h2>30+ careers, honestly described.</h2>
-        <p class="sec-sub">Each card carries what the work actually is, the typical route in, and a competition meter — because how hard a door is to open is information you deserve upfront. The list now leans into the emerging, green-economy roles too, not just the familiar ones.</p>
+        <div class="sec-eyebrow">Step 05 · The routes</div>
+        <h2>30+ career routes after economics.</h2>
+        <p class="sec-sub">Each card carries what the work actually is, the typical route in, and how hard the door is to open — because that is information you deserve upfront. The list leans into the emerging, green-economy roles too, not just the familiar ones.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 5 — Routes by heat</span>
+        <span class="cap">Fig. 6 — Routes by heat</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <g class="bar-anim">
             <rect x="16" y="58" width="16" height="32" rx="3" fill="#3E7C52"/>
@@ -1098,6 +849,7 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
       <button class="chip" data-f="data">Data &amp; Forecasting</button>
     </div>
     <div class="cards" id="cards"></div>
+    <div class="careers-note rv"><b>This list is a sample, not a census.</b> Economics feeds far more roles than any page can hold — new ones appear every year. If a career you've heard of isn't here, bring it to the live session and we'll map the route together.</div>
   </div>
 </section>
 
@@ -1113,12 +865,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">Step 04 · Zero sugar-coating</div>
-        <h2>Field notes nobody puts on a poster.</h2>
-        <p class="sec-sub">Six index cards. You deserve the hard truths at 15, not at 21 — and each card ends with the honest way through.</p>
+        <div class="sec-eyebrow">Step 06 · Zero sugar-coating</div>
+        <h2>The hard truths, told early.</h2>
+        <p class="sec-sub">Six index cards. You deserve these at 15, not at 21 — and each card ends with the honest way through. Every note is checked by CAP counsellors against current admissions and exam data, then stamped.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 6 — Expectation vs reality</span>
+        <span class="cap">Fig. 7 — Expectation vs reality</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <path d="M12 80 C 40 70, 70 30, 108 14" fill="none" stroke="#DCDED4" stroke-width="3" stroke-dasharray="5 5"/>
           <path d="M12 80 C 44 78, 60 66, 74 58 C 84 52, 90 40, 108 34" fill="none" stroke="#C9573F" stroke-width="3"/>
@@ -1128,12 +880,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
       </div>
     </div>
     <div class="truths">
-      <div class="truth rv"><span class="no">Note 01 / Admissions</span><b>Top colleges are genuinely brutal to enter.</b><p>BA (Hons) Economics at the top DU colleges routinely demands near-perfect CUET scores, and Ashoka-tier universities reject most applicants.</p><span class="and"><b>Way through →</b> Apply in tiers. Strong departments exist well beyond the five famous names.</span><span class="stamp">Verified</span></div>
-      <div class="truth rv"><span class="no">Note 02 / Employment</span><b>A BA in economics is not, by itself, a job.</b><p>India graduates lakhs of economics students yearly; the ones who struggle are almost always degree-only profiles.</p><span class="and"><b>Way through →</b> Two internships, one data skill, proof you can write. That trio beats a famous name without them.</span><span class="stamp">Verified</span></div>
-      <div class="truth rv"><span class="no">Note 03 / The maths door</span><b>The maths decision is nearly one-way.</b><p>Dropping maths in Class 11 is easy; re-adding its consequences at 20 is not. Quant routes and serious master's programmes assume it.</p><span class="and"><b>Way through →</b> If unsure, keep maths and decide later. Options have value — that's literally economics.</span><span class="stamp">Verified</span></div>
-      <div class="truth rv"><span class="no">Note 04 / The exam layer</span><b>Exam ratios are astronomical.</b><p>RBI Grade B, IES and UPSC see lakhs of applicants for a few hundred seats. Casual backups here are how years disappear.</p><span class="and"><b>Way through →</b> Decide deliberately, prepare with a time limit, keep a parallel track alive.</span><span class="stamp">Verified</span></div>
-      <div class="truth rv"><span class="no">Note 05 / First jobs</span><b>Entry offers vary wildly by campus.</b><p>The same analyst title at the same kind of firm can mean very different first offers depending on where you studied. That gap is real and unfair.</p><span class="and"><b>Way through →</b> The gap shrinks sharply by year five for people who compound skills. Entry point ≠ ceiling.</span><span class="stamp">Verified</span></div>
-      <div class="truth rv"><span class="no">Note 06 / The subject itself</span><b>Economics ≠ finance.</b><p>Plenty of students pick economics wanting money careers and meet philosophy, statistics and development instead.</p><span class="and"><b>Way through →</b> Run the 30-day challenge below before Class 11. Boredom is data — use it.</span><span class="stamp">Verified</span></div>
+      <div class="truth rv"><span class="no">Note 01 / Admissions</span><b>Top colleges are genuinely brutal to enter.</b><p>BA (Hons) Economics at the top DU colleges routinely demands near-perfect CUET scores, and Ashoka-tier universities reject most applicants.</p><span class="and"><b>Way through →</b> Apply in tiers. Strong departments exist well beyond the five famous names.</span><span class="stamp">CAP · Verified</span></div>
+      <div class="truth rv"><span class="no">Note 02 / Employment</span><b>A BA in economics is not, by itself, a job.</b><p>India graduates lakhs of economics students yearly; the ones who struggle are almost always degree-only profiles.</p><span class="and"><b>Way through →</b> Two internships, one data skill, proof you can write. That trio beats a famous name without them.</span><span class="stamp">CAP · Verified</span></div>
+      <div class="truth rv"><span class="no">Note 03 / The maths door</span><b>The maths decision is nearly one-way.</b><p>Dropping maths in Class 11 is easy; re-adding its consequences at 20 is not. Quant routes and serious master's programmes assume it.</p><span class="and"><b>Way through →</b> If unsure, keep maths and decide later. Options have value — that's literally economics.</span><span class="stamp">CAP · Verified</span></div>
+      <div class="truth rv"><span class="no">Note 04 / The exam layer</span><b>Exam ratios are astronomical.</b><p>RBI Grade B, IES and UPSC see lakhs of applicants for a few hundred seats. Casual backups here are how years disappear.</p><span class="and"><b>Way through →</b> Decide deliberately, prepare with a time limit, keep a parallel track alive.</span><span class="stamp">CAP · Verified</span></div>
+      <div class="truth rv"><span class="no">Note 05 / First jobs</span><b>Entry offers vary wildly by campus.</b><p>The same analyst title at the same kind of firm can mean very different first offers depending on where you studied. That gap is real and unfair.</p><span class="and"><b>Way through →</b> The gap shrinks sharply by year five for people who compound skills. Entry point ≠ ceiling.</span><span class="stamp">CAP · Verified</span></div>
+      <div class="truth rv"><span class="no">Note 06 / The subject itself</span><b>Economics ≠ finance.</b><p>Plenty of students pick economics wanting money careers and meet philosophy, statistics and development instead.</p><span class="and"><b>Way through →</b> Run the 30-day plan below before Class 11. Boredom is data — use it.</span><span class="stamp">CAP · Verified</span></div>
     </div>
   </div>
 </section>
@@ -1143,12 +895,12 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <div class="sec-eyebrow">Step 05 · The 30-day challenge</div>
-        <h2>30-Day Challenge &amp; Reflection.</h2>
-        <p class="sec-sub">Six moves below, each with real picks — books, channels, courses, fieldwork. Tap <b>+</b> to add anything to your board; <b>three moves is the sweet spot</b> (one from the shelf, one from the screen, one from the street). At the end, download your personalised plan and put it above your desk. If the month flies by, you have your answer.</p>
+        <div class="sec-eyebrow">Step 07 · Try before you choose</div>
+        <h2>CAP Recommendations: your next 30 days.</h2>
+        <p class="sec-sub">Books to read, channels to watch, courses to try, things to do — each one picked by CAP counsellors, most of them free. Tap <b>+</b> to add anything to your plan; <b>three is the sweet spot</b>. Then download your complimentary personalised career plan as a PDF — free — and put it above your desk. If the month flies by, you have your answer about economics. If it drags, that's an answer too.</p>
       </div>
       <div class="sec-fig minifig">
-        <span class="cap">Fig. 7 — Thirty days</span>
+        <span class="cap">Fig. 8 — Thirty days</span>
         <svg viewBox="0 0 120 100" width="130" aria-hidden="true">
           <g class="bar-anim">
             <rect x="10" y="10" width="100" height="14" rx="3" fill="#E3EDE4"/>
@@ -1164,6 +916,16 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
         </svg>
       </div>
     </div>
+    <div class="cal rv">
+      <div class="cal-title">Your next 30 days, starting <b id="calStart"></b> — this is all it takes</div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i style="background:var(--green)"></i>Week 1 · Start the book, log first prices</span>
+        <span><i style="background:var(--yellow)"></i>Week 2 · Keep going, explain one thing</span>
+        <span><i style="background:var(--red)"></i>Week 3 · The slump week — push through</span>
+        <span><i style="background:var(--ink)"></i>Week 4 · Finish, write, decide</span>
+      </div>
+    </div>
     <div class="moves" id="moves"></div>
   </div>
 </section>
@@ -1171,19 +933,19 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
 <!-- board bar + sheet -->
 <div class="plan-bar" id="planBar">
   <span class="pb-text" id="pbText"></span>
-  <button id="pbOpen">Open my board</button>
+  <button id="pbOpen">See my plan →</button>
 </div>
 <div class="sheet-veil" id="sheetVeil"></div>
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="My 30-day board">
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="My 30-day plan">
   <div class="sheet-head">
     <img id="logoSheet" alt="College Access Program">
-    <span class="sh-t">My 30-day board</span>
-    <button class="sheet-close" id="sheetClose" aria-label="Close board">✕</button>
+    <span class="sh-t">My 30-day plan</span>
+    <button class="sheet-close" id="sheetClose" aria-label="Close plan">✕</button>
   </div>
   <div class="sheet-body" id="sheetBody"></div>
   <div class="sheet-hint" id="sheetHint"></div>
   <div class="sheet-foot">
-    <button class="btn btn-dark" id="pdfBtn">Download my plan · PDF</button>
+    <button class="btn btn-dark" id="pdfBtn">Download my free plan · PDF</button>
     <button class="btn btn-ghost" id="sheetKeep">Keep browsing</button>
   </div>
 </div>
@@ -1193,13 +955,13 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
   <div class="wrap">
     <div class="shell rv">
       <div>
-        <span class="live-pill">More subjects to explore</span>
-        <h2>Economics is one route.<br>Explore where the others lead.</h2>
-        <p class="sec-sub">CAP runs Career Deep Dives and guidance sessions across other subjects, careers and pathways. See what is coming up next and continue exploring.</p>
+        <span class="live-pill">Live deep dive</span>
+        <h2>The page is the map.<br>The session is the guide.</h2>
+        <p class="sec-sub">The fastest way to test a career is to talk to someone living it. In the live Economics Career Deep Dive you meet the people on these exact routes — economists, policy researchers, behavioural economists, development consultants, economic journalists — plus CAP counsellors, with your questions answered in the room. Notice which conversation excites you most: that's often a clue to the kind of work you'll enjoy.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <a class="btn btn-dark" href="https://www.collegeaccessprogram.in/sessions/" style="justify-content:center">Explore sessions for other subjects →</a>
-        <a class="btn btn-ghost" href="#top" style="justify-content:center">Back to the Economics guide</a>
+        <a class="btn btn-dark" href="/sessions" style="justify-content:center">See upcoming sessions →</a>
+        <a class="btn btn-ghost" href="/deep-dives" style="justify-content:center">Explore another subject</a>
       </div>
     </div>
   </div>
@@ -1208,7 +970,7 @@ footer{background:var(--navy);border:0;color:#fff;margin:0;padding-top:46px}
 <footer>
   <div class="wrap foot">
     <div><img id="logoFoot" alt="College Access Program"><span class="mono">Career Deep Dive series · Built for Class 10–12 students across CBSE, ICSE, IB and Cambridge.</span></div>
-    <div class="mono">Competition meters are indicative and change year to year.<br>Always verify current admission requirements on official university pages.</div>
+    <div class="mono">"How hard to get in" ratings on career cards are indicative and change year to year.<br>Always verify current admission and exam requirements on official pages.</div>
   </div>
 </footer>
 <script>
@@ -1253,21 +1015,21 @@ const CAREERS=[
  {s:"markets",t:"Actuary",d:"Price risk for insurers and pension funds using serious mathematics. Small field, long exams, deep respect.",r:"Econ/Stats + maths → IFoA/IAI actuarial papers",heat:3},
  {s:"markets",t:"Fintech Product Manager",d:"Decide what a payments or lending app builds next. Economics thinking + tech fluency.",r:"Econ + data/CS exposure → APM programmes",heat:4},
  {s:"markets",t:"Risk Analyst",d:"Banks pay people to imagine everything that can go wrong, quantitatively. Steadier cousin of trading.",r:"Econ/Stats degree → FRM certification later",heat:3},
- {s:"markets",t:"Entrepreneur",d:"Pricing, incentives, unit economics — the founder's daily toolkit is an economics syllabus.",r:"Any fork + an actual problem you care about",heat:3},
+ {s:"markets",t:"Entrepreneur",d:"Pricing, incentives, unit economics — the founder's daily toolkit is an economics syllabus.",r:"Any route + an actual problem you care about",heat:3},
  {s:"markets",t:"ESG / Sustainable Finance Analyst",d:"Score companies on climate, social and governance risk — now a core input into how the world's biggest funds allocate money.",r:"Econ/finance degree → CFA ESG or sustainability cert",heat:3},
  {s:"markets",t:"Impact Investing Analyst",d:"Fund ventures that must return both profit and measurable good — climate, health, financial inclusion. The double bottom line.",r:"Econ + finance → impact funds, DFIs, foundations",heat:3},
  {s:"data",t:"Data Analyst → Data Scientist",d:"Turn raw data into decisions. The single most in-demand skill pairing with an economics degree.",r:"Econ + Python/SQL (self-taught counts)",heat:3},
  {s:"data",t:"Quantitative Analyst",d:"Build trading and pricing models at funds and banks. The most mathematical door economics opens.",r:"Econ+Maths/Stats → strong master's usually",heat:5},
  {s:"data",t:"Econometrician",d:"The statistician of economics — measure what policies and prices actually cause.",r:"BSc Econ → MA/MSc with econometrics focus",heat:3},
  {s:"data",t:"Market Research Analyst",d:"Find out what consumers actually want before companies bet crores on it.",r:"Econ/Stats/Psych degree → research firms",heat:2},
- {s:"data",t:"Business Intelligence Analyst",d:"Build the dashboards every company runs on. Underrated, everywhere, and hiring.",r:"Any econ fork + SQL/BI tools",heat:2},
+ {s:"data",t:"Business Intelligence Analyst",d:"Build the dashboards every company runs on. Underrated, everywhere, and hiring.",r:"Any econ route + SQL/BI tools",heat:2},
  {s:"data",t:"Sports Analytics / Economist",d:"Auction strategy, pricing, performance value — leagues and franchises now staff for it.",r:"Econ + data skills → niche, network in",heat:3},
  {s:"data",t:"Carbon Markets Analyst",d:"Price, model and audit carbon credits as emissions trading scales worldwide — a market that barely existed a decade ago and is now hiring hard.",r:"Econ + data → climate desks, exchanges, verifiers",heat:3},
  {s:"policy",t:"Economist (RBI / institutions)",d:"The actual title. Research and advise on the real economy at the RBI, World Bank, IMF, ADB.",r:"BSc Econ → MA/MSc (DSE/ISI/abroad) → research",heat:5},
  {s:"policy",t:"Indian Economic Service (IES)",d:"The specialist civil service for economists — shape national policy from inside government.",r:"Econ master's → UPSC IES exam",heat:5},
  {s:"policy",t:"Policy Analyst (think tanks)",d:"Research at NCAER, CPR and advisory firms. Where evidence meets government.",r:"Econ degree → master's often → think tanks",heat:3},
  {s:"policy",t:"Development Economist",d:"Field experiments and programme design on poverty, health and education — J-PAL-style work, much of it in India.",r:"Econ degree → RA roles → master's/PhD",heat:3},
- {s:"policy",t:"RBI Grade B Officer",d:"The regulator's officer cadre — among India's most competitive and most secure economics jobs.",r:"Any degree → RBI Grade B exam",heat:5},
+ {s:"policy",t:"RBI Grade B Officer",d:"The regulator's officer cadre — among India's most competitive and most secure jobs. The General stream takes any graduate; the economist stream (DEPR) needs an economics master's first.",r:"General: any degree → exam · DEPR: econ master's → exam",heat:5},
  {s:"policy",t:"Climate / Environmental Economist",d:"Carbon markets, green finance, climate risk. The decade's growth specialisation.",r:"Econ degree → environmental econ master's",heat:3},
  {s:"policy",t:"Energy / Renewables Economist",d:"Model the economics of the energy transition — grids, storage, subsidies, and the hard question of who pays for going green.",r:"Econ degree → energy econ master's / think tanks",heat:3},
  {s:"policy",t:"Sustainability Consultant",d:"Help companies and governments hit net-zero and disclosure targets without going broke doing it. Advisory work that didn't exist as a job a generation ago.",r:"Econ degree → sustainability / consulting track",heat:3},
@@ -1278,7 +1040,7 @@ const CAREERS=[
  {s:"people",t:"Economic / Financial Journalist",d:"Explain budgets, crashes and scams to millions. Writing + economics is a rare, valuable pairing.",r:"Econ degree → journalism school or straight in",heat:2},
  {s:"people",t:"Forensic Economist",d:"Expert-witness work: quantify damages, cartel overcharges and fraud for courts.",r:"Econ master's → litigation-consulting firms",heat:3},
  {s:"people",t:"Professor / Researcher",d:"Teach and publish. Long road, real scarcity of good economics faculty in India — genuine demand.",r:"BSc → MA → NET/PhD",heat:4},
- {s:"people",t:"Marketplace / Pricing Economist",d:"Design auctions, surge pricing and creator payouts inside tech companies.",r:"Econ+data fork → tech economist teams",heat:4}
+ {s:"people",t:"Marketplace / Pricing Economist",d:"Design auctions, surge pricing and creator payouts inside tech companies.",r:"Econ + data route → tech economist teams",heat:4}
 ];
 const SIDE_LABEL={markets:"Markets & Money",people:"People & Behaviour",policy:"Policy & Public Good",data:"Data & Forecasting"};
 const cardsEl=document.getElementById('cards');
@@ -1286,7 +1048,7 @@ function heatDots(n){let s='<span class="heat">';for(let i=1;i<=5;i++)s+='<i cla
 function renderCards(f){
   cardsEl.innerHTML=CAREERS.filter(c=>f==='all'||c.s===f).map((c,i)=>
    '<div class="card" style="animation-delay:'+Math.min(i*40,400)+'ms"><span class="side-tag side-'+c.s+'">'+SIDE_LABEL[c.s]+'</span><h4>'+c.t+'</h4><p>'+c.d+'</p>'+
-   '<div class="meta"><span>Route in → <b>'+c.r+'</b></span><span>Competition → '+heatDots(c.heat)+'</span></div></div>'
+   '<div class="meta"><span>Route in → <b>'+c.r+'</b></span><span>How hard to get in → '+heatDots(c.heat)+'</span></div></div>'
   ).join('');
 }
 renderCards('all');
@@ -1318,6 +1080,12 @@ const BANK=[
  {q:"Your favourite creator quits their job for YouTube. You think:",o:[["Bold — trading salary for equity in themselves.","markets"],["The audience relationship is the real asset. Fragile, though.","people"],["Gig work with no safety net worries me at scale.","policy"],["What's the median creator income? Not the top — the median.","data"]]},
  {q:"Ten years from now, the win that would feel best:",o:[["I built or funded something valuable.","markets"],["I understood something true about people and used it well.","people"],["Something I worked on made life better at scale.","policy"],["I saw it coming before anyone else — and I could prove it.","data"]]}
 ];
+const ILLO={
+ markets:'<svg viewBox="0 0 150 120" aria-hidden="true"><rect x="8" y="8" width="134" height="104" rx="14" fill="#E3EDE4"/><path d="M24 88 L52 66 L74 74 L100 46 L126 32" fill="none" stroke="#3E7C52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="126" cy="32" r="7" fill="#F0C94F" stroke="#202B3A" stroke-width="2.5"/><circle cx="42" cy="34" r="13" fill="#F0C94F" stroke="#202B3A" stroke-width="2.5"/><text x="42" y="39" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#202B3A" text-anchor="middle">₹</text></svg>',
+ people:'<svg viewBox="0 0 150 120" aria-hidden="true"><rect x="8" y="8" width="134" height="104" rx="14" fill="#F6E4DE"/><circle cx="52" cy="52" r="16" fill="none" stroke="#C9573F" stroke-width="3.5"/><path d="M30 92c4-14 12-20 22-20s18 6 22 20" fill="none" stroke="#C9573F" stroke-width="3.5" stroke-linecap="round"/><rect x="86" y="30" width="42" height="28" rx="9" fill="#fff" stroke="#202B3A" stroke-width="2.5"/><path d="M96 58l-4 10 12-8" fill="#fff" stroke="#202B3A" stroke-width="2.5" stroke-linejoin="round"/><text x="107" y="49" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#202B3A" text-anchor="middle">why?</text></svg>',
+ policy:'<svg viewBox="0 0 150 120" aria-hidden="true"><rect x="8" y="8" width="134" height="104" rx="14" fill="#E4E8F2"/><path d="M75 22L118 44H32z" fill="none" stroke="#3B5488" stroke-width="3.5" stroke-linejoin="round"/><path d="M44 52v32M62 52v32M88 52v32M106 52v32" stroke="#3B5488" stroke-width="3.5" stroke-linecap="round"/><path d="M32 92h86" stroke="#202B3A" stroke-width="3.5" stroke-linecap="round"/><circle cx="75" cy="34" r="4" fill="#F0C94F" stroke="#202B3A" stroke-width="2"/></svg>',
+ data:'<svg viewBox="0 0 150 120" aria-hidden="true"><rect x="8" y="8" width="134" height="104" rx="14" fill="#FBF1D3"/><rect x="28" y="62" width="16" height="30" rx="3" fill="#3E7C52"/><rect x="52" y="46" width="16" height="46" rx="3" fill="#F0C94F" stroke="#202B3A" stroke-width="2"/><rect x="76" y="34" width="16" height="58" rx="3" fill="#C9573F"/><circle cx="106" cy="44" r="16" fill="none" stroke="#202B3A" stroke-width="3.5"/><path d="M117 56l12 12" stroke="#202B3A" stroke-width="3.5" stroke-linecap="round"/></svg>'
+};
 const RESULTS={
  markets:{t:"Markets & Money",d:"You think in trades, prices and returns. Your natural territory: finance, consulting, entrepreneurship and the deal-making side of economics. Keep maths — this side runs on it.",c:["Investment Banking","Consulting","CA","Actuary","Fintech PM","Founder"]},
  people:{t:"People & Behaviour",d:"You're drawn to the why behind choices. Your territory: behavioural science, UX research, journalism and the human side of economics — where observation beats calculation.",c:["Behavioural Scientist","UX Researcher","Economic Journalist","Professor"]},
@@ -1337,10 +1105,11 @@ qbody.addEventListener('click',e=>{const b=e.target.closest('.quiz-opt');if(!b)r
 function showResult(){drawBar();qbar.querySelectorAll('i').forEach(i=>i.classList.add('on'));
   const win=Object.keys(score).sort((a,b)=>score[b]-score[a])[0];const r=RESULTS[win];
   qbody.innerHTML='';qres.classList.add('show');
-  qres.innerHTML='<span class="result-tag">Your side · '+r.t+'</span><div class="result-title">'+r.t+'</div>'+
-  '<p class="result-body">'+r.d+'</p><div class="result-careers">'+r.c.map(c=>'<span>'+c+'</span>').join('')+'</div>'+
+  qres.innerHTML='<div class="result-grid"><div><span class="result-tag">Your side · '+r.t+'</span><div class="result-title">'+r.t+'</div>'+
+  '<p class="result-body">'+r.d+'</p></div><div class="result-illo">'+ILLO[win]+'</div></div>'+
+  '<div class="result-careers">'+r.c.map(c=>'<span>'+c+'</span>').join('')+'</div>'+
   '<div class="hero-ctas"><a class="btn btn-dark" href="#careers" onclick="jumpFilter(\''+win+'\')">See your careers →</a>'+
-  '<a class="btn btn-ghost" href="https://www.collegeaccessprogram.in/sessions/">Explore other subject sessions</a></div>'+
+  '<a class="btn btn-ghost" href="/sessions">Ask about this side, live</a></div>'+
   '<button class="quiz-restart" onclick="restartQuiz()">Retake with a fresh deck — no wrong answers</button>'}
 function jumpFilter(side){document.querySelectorAll('.chip').forEach(c=>{c.classList.toggle('on',c.dataset.f===side)});renderCards(side)}
 function restartQuiz(){qres.classList.remove('show');qres.innerHTML='';newDeck();drawQ()}
@@ -1360,25 +1129,26 @@ const GLYPH={
  trophy:'<svg width="17" height="17" viewBox="0 0 17 17"><path d="M5 2.5h7v4a3.5 3.5 0 0 1-7 0zM5 3.5H2.5a2.5 2.5 0 0 0 2.7 2.7M12 3.5h2.5a2.5 2.5 0 0 1-2.7 2.7M8.5 10v2.5M5.5 14.5h6" fill="none" stroke="#202B3A" stroke-width="1.4"/></svg>'
 };
 const MOVES=[
- {id:'READ',no:'01',label:'The shelf',title:'Read one book',cost:'~20 min a day',glyph:'book',
+ {id:'READ',no:'01',label:'Books to read',title:'Read one book',cost:'~20 min a day',glyph:'book',
   desc:'One book, cover to cover, in 30 days. Not a summary, not a reel about the book. If you catch yourself explaining it to someone, big signal.',
   rule:'Pick one',mode:'pick',
   picks:[
-   {id:'b1',t:'Freakonomics',n:'The gateway — economics as questions about anything',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=freakonomics+levitt+dubner'},
-   {id:'b2',t:'The Undercover Economist',n:'How markets work, told through coffee shops',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=the+undercover+economist+tim+harford'},
-   {id:'b3',t:'Poor Economics',n:'Nobel-winning, half its evidence from India',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=poor+economics+banerjee+duflo'},
-   {id:'b4',t:'Misbehaving',n:'The rebellion that proved humans aren\u2019t calculators',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=misbehaving+richard+thaler'}
+   {id:'b1',t:'Freakonomics',n:'The gateway — economics as questions about anything',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=freakonomics+levitt+dubner',price:'≈₹399 · or your library',cover:'#3E7C52'},
+   {id:'b2',t:'The Undercover Economist',n:'How markets work, told through coffee shops',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=the+undercover+economist+tim+harford',price:'≈₹350 · or your library',cover:'#C9573F'},
+   {id:'b3',t:'Poor Economics',n:'Nobel-winning, half its evidence from India',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=poor+economics+banerjee+duflo',price:'≈₹399 · or your library',cover:'#3B5488'},
+   {id:'b4',t:'Misbehaving',n:'The rebellion that proved humans aren\u2019t calculators',host:'AMAZON.IN',url:'https://www.amazon.in/s?k=misbehaving+richard+thaler',price:'≈₹499 · or your library',cover:'#8A6D1B'}
   ]},
- {id:'WATCH',no:'02',label:'The screen',title:'Watch one series',cost:'~15 min a day',glyph:'play',
+ {id:'WATCH',no:'02',label:'Videos to watch',title:'Watch one series',cost:'~15 min a day · free',glyph:'play',
   desc:'Pick one channel and actually finish a run of it, in order. Bingeing counts as studying here. Enjoy that while it lasts.',
   rule:'Pick one',mode:'pick',
   picks:[
    {id:'w1',t:'CrashCourse Economics',n:'The whole syllabus, funnier and faster',host:'YOUTUBE',url:'https://www.youtube.com/results?search_query=crash+course+economics+playlist'},
    {id:'w2',t:'Economics Explained',n:'Whole countries as case studies',host:'YOUTUBE',url:'https://www.youtube.com/@EconomicsExplained'},
    {id:'w3',t:'Marginal Revolution University',n:'Real university micro, in five-minute pieces',host:'FREE',url:'https://mru.org'},
-   {id:'w4',t:'Everything is Everything',n:'The Indian economy, by two of its sharpest minds',host:'YOUTUBE',url:'https://www.youtube.com/results?search_query=everything+is+everything+ajay+shah+amit+varma'}
+   {id:'w4',t:'Everything is Everything',n:'The Indian economy, by two of its sharpest minds',host:'YOUTUBE',url:'https://www.youtube.com/results?search_query=everything+is+everything+ajay+shah+amit+varma'},
+   {id:'w5',t:'Hans Rosling: The Best Stats You\u2019ve Ever Seen',n:'Twenty minutes that changed how people read data',host:'TED',url:'https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen'}
   ]},
- {id:'TAKE',no:'03',label:'The test drive',title:'Take one course unit',cost:'~30 min, 3x a week',glyph:'cap',
+ {id:'TAKE',no:'03',label:'Courses to try',title:'Try one course unit',cost:'~30 min, 3x a week · free',glyph:'cap',
   desc:'Try actual university economics before you commit years to it. One unit is enough to feel whether the thinking suits your brain.',
   rule:'Pick one',mode:'pick',
   picks:[
@@ -1387,7 +1157,7 @@ const MOVES=[
    {id:'c3',t:'Financial Markets — Robert Shiller',n:'A Nobel laureate, free to audit',host:'COURSERA',url:'https://www.coursera.org/learn/financial-markets-global'},
    {id:'c4',t:'MIT OCW 14.01, Lecture 1',n:'The honest deep end',host:'MIT OCW',url:'https://ocw.mit.edu/courses/14-01-principles-of-microeconomics-fall-2018/'}
   ]},
- {id:'TRACK',no:'04',label:'The street',title:'Track five prices',cost:'~5 min a day',glyph:'note',
+ {id:'TRACK',no:'04',label:'Fieldwork',title:'Track five prices',cost:'~5 min a day · free',glyph:'note',
   desc:'Real fieldwork. Pick five prices in your life — chai, auto fare, tomatoes, a movie ticket, a data pack — and log them daily for 30 days. Watch which ones move, which don\u2019t, and start asking why. This is what economists actually do.',
   rule:'Your kit',mode:'move',
   picks:[
@@ -1395,14 +1165,14 @@ const MOVES=[
    {id:'t2',t:'Same time daily — consistency is the whole method'},
    {id:'t3',t:'End of month: a paragraph on the price that surprised you'}
   ]},
- {id:'EXPLAIN',no:'05',label:'The mirror',title:'Explain one thing',cost:'once a week',glyph:'mic',
+ {id:'EXPLAIN',no:'05',label:'The weekly habit',title:'Explain one thing, once a week',cost:'~2 min a week · free',glyph:'mic',
   desc:'Each week, explain one economic thing you noticed — a price change, a queue, a sale — to a friend or parent in under two minutes. If explaining it was fun, pay attention to that feeling. Careers are built on it.',
   rule:'The rule',mode:'move',
   picks:[
    {id:'e1',t:'No jargon allowed — if you need the textbook word, you don\u2019t get it yet'},
    {id:'e2',t:'Week 4: write one explanation down, 200 words. Keep it.'}
   ]},
- {id:'COMPETE',no:'06',label:'The arena',title:'Enter the arena',cost:'~30 min a week',glyph:'trophy',
+ {id:'COMPETE',no:'06',label:'Test yourself',title:'Enter one competition',cost:'~30 min a week',glyph:'trophy',
   desc:'Test yourself against something real. Competition is the fastest honest feedback about whether this subject and your brain get along.',
   rule:'Pick one',mode:'pick',
   picks:[
@@ -1420,14 +1190,16 @@ function renderMoves(){
       if(isMove){return '<div class="pick"><span class="pick-ic">'+GLYPH[m.glyph]+'</span><div class="pick-main"><div class="pick-t" style="font-weight:500">'+p.t+'</div></div></div>'}
       const link=p.url?'<a class="pick-link" href="'+p.url+'" target="_blank" rel="noopener">'+p.host+' ↗</a>':'';
       const added=board.has(p.id);
-      return '<div class="pick"><span class="pick-ic">'+GLYPH[m.glyph]+'</span><div class="pick-main"><div class="pick-t">'+p.t+'</div>'+(p.n?'<div class="pick-n">'+p.n+'</div>':'')+'</div>'+link+
-        '<button class="pick-add'+(added?' added':'')+'" data-move="'+m.id+'" data-pick="'+p.id+'" aria-label="Add '+p.t+' to my board">'+(added?'✓':'+')+'</button></div>';
+      const ic=p.cover?'<span class="bookcover" style="background:linear-gradient(160deg,'+p.cover+',#202B3A 130%)"><span>'+p.t.split(':')[0].slice(0,26)+'</span></span>':'<span class="pick-ic">'+GLYPH[m.glyph]+'</span>';
+      const price=p.price?'<span class="price-tag">'+p.price+'</span>':'';
+      return '<div class="pick">'+ic+'<div class="pick-main"><div class="pick-t">'+p.t+'</div>'+(p.n?'<div class="pick-n">'+p.n+'</div>':'')+price+'</div>'+link+
+        '<button class="pick-add'+(added?' added':'')+'" data-move="'+m.id+'" data-pick="'+p.id+'" aria-label="Add '+p.t+' to my plan">'+(added?'✓':'+')+'</button></div>';
     }).join('');
     const moveAdded=isMove&&board.has(m.id);
-    const btn=isMove?'<button class="move-btn'+(moveAdded?' added':'')+'" data-move="'+m.id+'">'+(moveAdded?'✓ On my board':'Add this move to my board')+'</button>':'';
+    const btn=isMove?'<button class="move-btn'+(moveAdded?' added':'')+'" data-move="'+m.id+'">'+(moveAdded?'✓ On my plan':'Add this to my plan')+'</button>':'';
     const has=[...board.values()].some(v=>v.moveId===m.id);
     return '<div class="move rv in'+(has?' has-picked':'')+'" id="mv-'+m.id+'">'+
-      '<span class="move-no">Move '+m.no+' · '+m.label+'</span><h4>'+m.title+'</h4><span class="cost">'+m.cost+'</span>'+
+      '<span class="move-no">CAP Recommendation '+m.no+' · '+m.label+'</span><h4>'+m.title+'</h4><span class="cost">'+m.cost+'</span>'+
       '<p>'+m.desc+'</p><div class="picks"><div class="move-no" style="margin-bottom:4px">'+m.rule+'</div>'+picksHtml+'</div>'+btn+'</div>';
   }).join('');
 }
@@ -1452,7 +1224,7 @@ function distinctMoves(){return new Set([...board.values()].map(v=>v.moveId)).si
 function updateBar(){
   if(board.size===0){planBar.classList.remove('show');closeSheet();return}
   const n=distinctMoves();
-  pbText.innerHTML='<b>'+board.size+'</b> item'+(board.size>1?'s':'')+' · <b>'+n+'</b> move'+(n>1?'s':'');
+  pbText.innerHTML='<b>'+board.size+'</b> pick'+(board.size>1?'s':'')+' · <b>'+n+'</b>/6 recommendations';
   planBar.classList.add('show');
 }
 function openSheet(){renderSheet();sheet.classList.add('show');veil.classList.add('show');document.body.style.overflow='hidden'}
@@ -1467,11 +1239,11 @@ function renderSheet(){
   const groups=MOVES.filter(m=>[...board.values()].some(v=>v.moveId===m.id));
   body.innerHTML=groups.map(m=>{
     const items=[...board.entries()].filter(([id,v])=>v.moveId===m.id);
-    return '<div class="sheet-group"><div class="sg-label">Move '+m.no+' · '+m.title+'</div>'+
+    return '<div class="sheet-group"><div class="sg-label">Recommendation '+m.no+' · '+m.title+'</div>'+
       items.map(([id,v])=>'<div class="sheet-item"><span class="pick-ic">'+GLYPH[m.glyph]+'</span><span class="si-t">'+v.pick.t+(v.pick.n?'<small>'+v.pick.n+'</small>':'')+'</span><button class="si-x" data-id="'+id+'" aria-label="Remove">✕</button></div>').join('')+'</div>';
   }).join('');
   const n=distinctMoves();
-  document.getElementById('sheetHint').textContent=n<3?'Three moves is the sweet spot — add '+(3-n)+' more kind'+(3-n>1?'s':'')+' of move.':n===3?'Three moves. The sweet spot. Chef\u2019s kiss.':'Ambitious! Remember it has to survive a school week.';
+  document.getElementById('sheetHint').textContent=n<3?'Three recommendations is the sweet spot — pick from '+(3-n)+' more.':n===3?'Three recommendations. The sweet spot. Chef\u2019s kiss.':'Ambitious! Remember it has to survive a school week.';
 }
 document.getElementById('sheetBody').addEventListener('click',e=>{
   const x=e.target.closest('.si-x');if(!x)return;
@@ -1498,7 +1270,7 @@ async function buildPlanPDF(){
     doc.text('DAY 30: YOU WILL KNOW  /  PAGE '+page,W-M,H-9,{align:'right'})}
   function newPage(){footer();doc.addPage();page++;grid();
     doc.setFont('courier','bold');doc.setFontSize(8);doc.setTextColor(...ink);
-    doc.text('MY 30-DAY ECONOMICS CHALLENGE - CONTINUED',M,20);
+    doc.text('MY 30-DAY ECONOMICS PLAN - CONTINUED',M,20);
     doc.setDrawColor(...ink);doc.setLineWidth(0.5);doc.line(M,23,W-M,23);y=32}
   function ensure(h){if(y+h>H-20)newPage()}
   /* header */
@@ -1510,12 +1282,12 @@ async function buildPlanPDF(){
   const dt=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   doc.text('GENERATED '+dt,W-M,20,{align:'right'});
   const nMoves=distinctMoves();
-  doc.text(board.size+' ITEMS / '+nMoves+' MOVES',W-M,25,{align:'right'});
+  doc.text(board.size+' PICKS / '+nMoves+' RECOMMENDATIONS',W-M,25,{align:'right'});
   y=18+lh+8;
   doc.setFillColor(...yellow);doc.rect(M,y,52,3.4,'F');
   y+=11;
   doc.setFont('helvetica','bold');doc.setFontSize(23);doc.setTextColor(...ink);
-  doc.text('MY 30-DAY ECONOMICS CHALLENGE',M,y);
+  doc.text('MY 30-DAY ECONOMICS PLAN',M,y);
   y+=7.5;
   doc.setFont('helvetica','italic');doc.setFontSize(9.5);doc.setTextColor(...soft);
   doc.text('If the month flies by, you have your answer. If it drags, that is an answer too.',M,y);
@@ -1532,7 +1304,7 @@ async function buildPlanPDF(){
     doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor(...yellow);
     doc.text(m.no,M+6,y+7.8,{align:'center'});
     doc.setFont('courier','normal');doc.setFontSize(7);doc.setTextColor(...grey);
-    doc.text(('MOVE '+m.no+' / '+m.label).toUpperCase(),M+16,y+3.5);
+    doc.text(('RECOMMENDATION '+m.no+' / '+m.label).toUpperCase(),M+16,y+3.5);
     doc.setFont('helvetica','bold');doc.setFontSize(14);doc.setTextColor(...ink);
     doc.text(m.title,M+16,y+10);
     doc.setFont('courier','normal');doc.setFontSize(7.5);doc.setTextColor(...green);
@@ -1576,15 +1348,73 @@ async function buildPlanPDF(){
   doc.text('Signed:',M,y);doc.setDrawColor(...grey);doc.setLineWidth(0.3);doc.line(M+14,y+1,M+74,y+1);
   doc.text('Day 1:',M+86,y);doc.line(M+98,y+1,W-M,y+1);
   footer();
-  doc.save('CAP-30-day-economics-challenge.pdf');
+  doc.save('CAP-30-day-economics-plan.pdf');
 }
 document.getElementById('pdfBtn').addEventListener('click',async()=>{
-  const b=document.getElementById('pdfBtn');const old='Download my plan · PDF';
+  const b=document.getElementById('pdfBtn');const old='Download my free plan · PDF';
   b.disabled=true;b.textContent='Preparing…';
   try{await loadJsPDF();await buildPlanPDF();b.textContent='Downloaded ✓'}
   catch(e){b.textContent='Download failed — try again'}
   setTimeout(()=>{b.textContent=old;b.disabled=false},2200);
 });
+
+
+/* ── big mac reveal ── */
+const BM_LINES={ch:'Switzerland: $7.99 — strong franc, high wages, the world\u2019s priciest burger. The currency is likely overvalued.',
+ sg:'Singapore: $5.17 — close to the US price. The Singapore dollar sits near what economists call fair value.',
+ in:'India: $2.62 — under half the US price. The rupee buys more burger per dollar, a classic sign of an undervalued currency (and cheaper local costs).'};
+const bmRow=document.getElementById('bmRow');
+if(bmRow){bmRow.addEventListener('click',e=>{
+  const c=e.target.closest('.bm-card');if(!c||c.classList.contains('open'))return;
+  c.classList.add('open');c.querySelector('.bm-price').textContent=c.dataset.price;
+  document.getElementById('bmCap').textContent=BM_LINES[c.dataset.c];
+  if(bmRow.querySelectorAll('.bm-card.open').length===4){
+    setTimeout(()=>{document.getElementById('bmCap').innerHTML='Same burger, prices worlds apart. The Economist has run this as the <b>Big Mac Index</b> since 1986 — a real tool for judging whether currencies are over- or undervalued. If comparing burger prices just felt fun, that instinct has a name: economics.'},1600)}
+})}
+
+/* ── live 30-day calendar ── */
+(function(){
+  const grid=document.getElementById('calGrid');if(!grid)return;
+  const start=new Date();
+  document.getElementById('calStart').textContent='today, '+start.toLocaleDateString('en-GB',{day:'numeric',month:'long'});
+  const mons=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let html='';
+  for(let i=0;i<30;i++){
+    const d=new Date(start);d.setDate(start.getDate()+i);
+    const wk='w'+(Math.floor(i/7)+1>4?4:Math.floor(i/7)+1);
+    html+='<div class="cal-day '+wk+(i===0?' today':'')+'"><div class="cd-n">'+String(i+1)+'</div><div class="cd-d">'+d.getDate()+' '+mons[d.getMonth()]+'</div></div>';
+  }
+  grid.innerHTML=html;
+})();
+
+
+/* ── scrollspy for sticky step strip ── */
+(function(){
+  const strip=document.getElementById('stepStrip');if(!strip)return;
+  const pills={};strip.querySelectorAll('.step-pill').forEach(p=>pills[p.dataset.sec]=p);
+  const ids=['fit','sorter','pathways','skills','careers','reality','challenge'];
+  let cur='';
+  function setActive(id){
+    if(id===cur)return;cur=id;
+    strip.querySelectorAll('.step-pill').forEach(p=>p.classList.toggle('active',p.dataset.sec===id));
+    const pl=pills[id];if(!pl)return;
+    strip.scrollTo({left:Math.max(0,pl.offsetLeft-strip.clientWidth/2+pl.clientWidth/2),behavior:'smooth'});
+  }
+  let tick=false;
+  function spy(){
+    tick=false;
+    const probe=window.scrollY+window.innerHeight*0.38;
+    let id='';
+    for(const x of ids){const el=document.getElementById(x);if(el&&el.offsetTop<=probe)id=x}
+    if(id)setActive(id);else{cur='';strip.querySelectorAll('.step-pill').forEach(p=>p.classList.remove('active'))}
+  }
+  window.addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(spy)}},{passive:true});
+  spy();
+})();
+
+/* ── mobile note dismiss ── */
+const mn=document.getElementById('mobileNote');
+if(mn){document.getElementById('mnClose').addEventListener('click',()=>mn.remove())}
 
 /* ── scroll reveal ── */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
